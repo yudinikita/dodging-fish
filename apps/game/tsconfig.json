@@ -1,0 +1,36 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": "./",
+    "target": "esnext",
+    "module": "esnext",
+    "skipLibCheck": true,
+    "moduleResolution": "node",
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "sourceMap": true,
+    "paths": {
+      "@/*": [
+        "src/*"
+      ],
+      "@": [
+        "src/"
+      ]
+    },
+    "typeRoots": [
+      "../../node_modules/@types",
+      "./typings"
+    ],
+    "types": [
+      "vite-plugin-pwa"
+    ]
+  },
+  "include": [
+    "./src"
+  ]
+}

@@ -1,0 +1,8 @@
+.next/*
+examples/*
+dist/*
+public/*
+scripts/*
+tests/*
+**/serviceWorker.js
+lint-staged.config.js

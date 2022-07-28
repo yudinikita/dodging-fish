@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang='ru'>
+<head>
+  <meta charset='utf-8' />
+  <title>Dodging Fish</title>
+
+  <base href='/' />
+
+  <meta name='viewport'
+        content='viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0' />
+  <meta name='description' content='You need to avoid obstacles, keeping the little fish alive.' />
+  <meta name='theme-color' content='#3e66d2' />
+
+  <meta name='apple-mobile-web-app-capable' content='yes' />
+  <meta name='apple-mobile-web-app-title' content='Dodging Fish' />
+  <meta name='apple-mobile-web-app-status-bar-style' content='black' />
+
+  <!--  <meta http-equiv='Content-Security-Policy' content="script-src 'self';">-->
+
+  <link rel='apple-touch-icon' sizes='180x180' href='/icons/apple-touch-icon.png'>
+  <link rel='icon' type='image/png' sizes='32x32' href='/icons/favicon-32x32.png'>
+  <link rel='icon' type='image/png' sizes='16x16' href='/icons/favicon-16x16.png'>
+
+  <link rel='manifest' href='/manifest.json'>
+
+  <link rel='prefetch' as='font' href='/assets/fonts/NotoSans-Bold.ttf' type='font/ttf' crossorigin='anonymous' />
+
+  <link rel='stylesheet' href='/style.css'>
+</head>
+
+<body>
+<noscript>Please enable javascript to continue using this application.</noscript>
+<div id='game-container'></div>
+<script type='module' src='/src/index.ts'></script>
+</body>
+</html>
