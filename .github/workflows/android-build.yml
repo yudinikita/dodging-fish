@@ -54,5 +54,5 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: app-release
-          path: android/app/build/outputs/bundle/release/app-release-signed.aab
+          path: ./apps/game/android/app/build/outputs/bundle/release/app-release-signed.aab
           retention-days: 60
