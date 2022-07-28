@@ -8,7 +8,7 @@ export default defineConfig({
     assetsDir: 'code',
     rollupOptions: {
       output: {
-        manualChunks: function splitModulesOnChunks(id) {
+        manualChunks: function splitModulesOnChunks (id) {
           if (id.includes('node_modules'))
             return id
               .toString()
@@ -29,7 +29,7 @@ export default defineConfig({
       minify: true,
       registerType: 'autoUpdate',
       manifestFilename: 'manifest.json',
-      includeAssets: ['**/*.png', '**/*.ttf', '**/*.cur', '**/*.ico'],
+      includeAssets: ['**/*.png', '**/*.ttf', '**/*.cur', '**/*.ico', '**/*.css'],
       devOptions: {
         enabled: true,
       },
@@ -37,7 +37,7 @@ export default defineConfig({
         id: '/',
         scope: '/',
         name: 'Dodging Fish',
-        display: 'standalone',
+        display: 'fullscreen',
         start_url: '/',
         short_name: 'Dodging Fish',
         theme_color: '#3e66d2',
