@@ -1,0 +1,49 @@
+# dependencies
+node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+coverage
+types
+
+# next.js
+/.next/
+.next/
+/out/
+
+# production
+/build
+dist/
+dev-dist/
+
+# misc
+.DS_Store
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.production
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# turborepo
+.turbo
+
+# capacitor
+**/resources/android/icon
+**/resources/android/splash
+**/resources/ios/icon
+**/resources/ios/splash
+**/resources/windows/icon
+**/resources/windows/splash
+**/release.jks
+
+# idea
+.idea
+**/.idea
