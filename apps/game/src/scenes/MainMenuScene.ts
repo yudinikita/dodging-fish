@@ -31,12 +31,8 @@ export default class MainMenuScene extends Phaser.Scene {
       Number.POSITIVE_INFINITY
     )
 
-    // rect.setVelocity(3, 1)
-    // rect.setAngularVelocity(0.01)
     rect.setBounce(0.5)
     rect.setFriction(0, 0, 0)
-
-    //this.matter.add.mouseSpring()
 
     this.add.text(0, 0, 'Dodging Fish', {
       fontFamily: constants.FONT.FAMILY,
