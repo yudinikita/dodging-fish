@@ -56,12 +56,3 @@ jobs:
           name: app-release
           path: ./apps/game/android/app/build/outputs/bundle/release/app-release-signed.aab
           retention-days: 60
-
-      - name: Build Release APK
-        run: cd android && gradle assembleRelease
-
-      - name: Releasing using Hub
-        uses: kyze8439690/action-release-releaseapk@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-          APP_FOLDER: ./android/app
