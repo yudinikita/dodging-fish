@@ -1,4 +1,5 @@
 {
+  "private": true,
   "name": "dodging-fish-web",
   "version": "0.0.0",
   "scripts": {
