@@ -1,5 +1,5 @@
 module.exports = {
-  '**/*.(ts|tsx)': () => 'yarn tsc --noEmit',
+  '**/*.(ts|tsx)': () => 'yarn lint',
 
   '**/*.(ts|tsx|js)': (filenames) => [
     `yarn eslint --fix ${filenames.join(' ')}`,
