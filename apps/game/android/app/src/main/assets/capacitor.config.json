@@ -1,7 +1,0 @@
-{
-	"appId": "com.NikitaYudin.DodgingFish",
-	"appName": "Dodging Fish",
-	"webDir": "dist",
-	"bundledWebRuntime": false,
-	"backgroundColor": "#3e66d2"
-}

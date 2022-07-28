@@ -1,7 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<resources>
-    <string name="app_name">dodging-fish</string>
-    <string name="title_activity_main">dodging-fish</string>
-    <string name="package_name">com.NikitaYudin.DodgingFish</string>
-    <string name="custom_url_scheme">com.NikitaYudin.DodgingFish</string>
-</resources>

@@ -8,14 +8,9 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "clean": "rm -rf .turbo && rm -rf node_modules",
-    "android": "cap copy android && cap open android",
     "resources": "cordova-res android --skip-config --copy"
   },
   "devDependencies": {
-    "@capacitor/android": "^4.0.0",
-    "@capacitor/cli": "^4.0.0",
-    "@capacitor/core": "^4.0.0",
-    "cordova-res": "^0.15.4",
     "vite": "^3.0.3",
     "vite-plugin-pwa": "^0.12.3"
   },
