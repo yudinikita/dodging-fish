@@ -2,8 +2,8 @@ const DEBUG = true
 
 const SCALE = 1
 
-const width = 375
-const height = 667
+const width = 1080
+const height = 1920
 
 const constants = {
   SCALE,
@@ -23,8 +23,8 @@ const constants = {
     MAIN_MENU: 'main-menu-scene',
   },
   SPIKE: {
-    WIDTH: 42,
-    HEIGHT: 22,
+    WIDTH: 145,
+    HEIGHT: 87,
   },
 }
 
