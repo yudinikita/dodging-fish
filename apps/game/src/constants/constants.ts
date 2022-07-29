@@ -22,6 +22,10 @@ const constants = {
     LOADING: 'loading-scene',
     MAIN_MENU: 'main-menu-scene',
   },
+  SPIKE: {
+    WIDTH: 42,
+    HEIGHT: 22,
+  },
 }
 
 export default constants
