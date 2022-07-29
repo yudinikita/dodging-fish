@@ -9,8 +9,6 @@ export default class MainMenuScene extends Phaser.Scene {
   }
 
   create() {
-    const { width, height } = this.cameras.main
-
     this.matter.world.setBounds(0, 0, constants.WIDTH, constants.HEIGHT)
 
     const scoreText = this.add
@@ -27,7 +25,8 @@ export default class MainMenuScene extends Phaser.Scene {
       constants.WIDTH / 2,
       constants.HEIGHT / 2,
       'bird_001',
-      0
+      0,
+      {}
     )
 
     player.setDataEnabled()
@@ -43,7 +42,6 @@ export default class MainMenuScene extends Phaser.Scene {
 
     player.setRectangle(80, 40, {
       chamfer: { radius: [22, 22, 22, 22] },
-      label: 'player',
     })
 
     player.setOrigin(0.5, 0.5)
@@ -57,22 +55,7 @@ export default class MainMenuScene extends Phaser.Scene {
     player.setBounce(0.5)
     player.setFriction(0, 0, 0)
 
-    const wallLeft = new Wall(this, {
-      x: 2,
-      y: height / 2,
-      width: 2,
-      height,
-      label: 'wallLeft',
-      alpha: 0,
-    })
-    const wallRight = new Wall(this, {
-      x: width - 2,
-      y: height / 2,
-      width: 2,
-      height,
-      label: 'wallRight',
-      alpha: 0,
-    })
+    //this.matter.add.mouseSpring()
 
     const wallHeight = 45
 
@@ -245,6 +228,6 @@ export default class MainMenuScene extends Phaser.Scene {
           }
         }
       }
-    )
+    })
   }
 }
