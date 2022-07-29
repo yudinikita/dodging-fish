@@ -4,7 +4,7 @@ import SceneList from '@/config/sceneList'
 
 const gameConfig: Phaser.Types.Core.GameConfig = {
   title: 'Dont Touch',
-  version: '0.0.2',
+  version: '0.0.4',
   type: Phaser.AUTO,
   parent: 'game-container',
   backgroundColor: '#3e66d2',
