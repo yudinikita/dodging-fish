@@ -1,6 +1,7 @@
 import Phaser from 'phaser'
 import constants from '@/constants'
-import Wall from '@/components/Wall/Wall'
+import Wall from '@/components/Wall'
+import SpikeGroup from '@/components/SpikeGroup'
 
 export default class MainMenuScene extends Phaser.Scene {
   constructor() {
@@ -8,6 +9,8 @@ export default class MainMenuScene extends Phaser.Scene {
   }
 
   create() {
+    const { width, height } = this.cameras.main
+
     this.matter.world.setBounds(0, 0, constants.WIDTH, constants.HEIGHT)
 
     const scoreText = this.add
@@ -227,6 +230,6 @@ export default class MainMenuScene extends Phaser.Scene {
           }
         }
       }
-    })
+    )
   }
 }
