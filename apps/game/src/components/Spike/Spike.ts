@@ -1,35 +1,34 @@
 export type SpikeConfig = {
   x: number
   y: number
+  width: number
+  height: number
   label?: string
   color?: number
   alpha?: number
 }
 
-export default class Spike extends Phaser.GameObjects.Container {
-  private readonly triangle: Phaser.GameObjects.Polygon
-
+export default class Spike extends Phaser.GameObjects.Polygon {
   constructor(scene: Phaser.Scene, config: SpikeConfig) {
-    const { x, y, label, color, alpha } = config
+    const { x, y, width, height, label, color, alpha } = config
 
-    super(scene, x, y)
+    const trianglePoints = `0 ${height} ${width} ${height} ${width / 2} 0`
+
+    super(scene, x, y, trianglePoints, color, alpha)
     scene.add.existing(this)
 
-    const trianglePoints = '0 40 70 40 35 0'
-    this.triangle = scene.add.polygon(x, y, trianglePoints, color, alpha)
-
-    scene.matter.add.gameObject(this.triangle, {
-      isStatic: true,
-      label,
-      shape: {
-        type: 'fromVerts',
-        verts: trianglePoints,
-        flagInternal: true,
+    scene.matter.add.gameObject(
+      this,
+      {
+        isStatic: true,
+        label,
+        shape: {
+          type: 'fromVerts',
+          verts: trianglePoints,
+          flagInternal: true,
+        },
       },
-    })
-  }
-
-  public changeColor(color: number) {
-    this.triangle.setFillStyle(color)
+      true
+    )
   }
 }
