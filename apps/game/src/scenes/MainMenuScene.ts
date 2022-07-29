@@ -1,6 +1,7 @@
 import Phaser from 'phaser'
 import constants from '@/constants'
 import Wall from '@/components/Wall'
+import Spike from '@/components/Spike'
 
 export default class MainMenuScene extends Phaser.Scene {
   constructor() {
@@ -105,6 +106,14 @@ export default class MainMenuScene extends Phaser.Scene {
     const score = player.data.get('score')
     scoreText.setText(score)
 
+    const spike = new Spike(this, {
+      x: width / 2,
+      y: height / 2,
+      label: 'spike',
+      color: 0xcc_cc_cc,
+      alpha: 1,
+    })
+
     const vel = {
       x: 3,
       y: -3,
@@ -133,6 +142,7 @@ export default class MainMenuScene extends Phaser.Scene {
             const randomColor = 0x1_00_00_00 + Math.random() * 0xff_ff_ff
             wallTop.changeColor(randomColor)
             wallBottom.changeColor(randomColor)
+            spike.changeColor(randomColor)
           } else if ([bodyA.label, bodyB.label].includes('wallRight')) {
             vel.x = -3
             player.setFlipX(true)
@@ -140,6 +150,7 @@ export default class MainMenuScene extends Phaser.Scene {
             const randomColor = 0x1_00_00_00 + Math.random() * 0xff_ff_ff
             wallTop.changeColor(randomColor)
             wallBottom.changeColor(randomColor)
+            spike.changeColor(randomColor)
           } else if (
             [bodyA.label, bodyB.label].includes('wallTop') ||
             [bodyA.label, bodyB.label].includes('wallBottom')
