@@ -65,7 +65,6 @@ export default class LoadingScene extends Phaser.Scene {
   }
 
   private loadResources() {
-    this.load.image('cursor-hand', 'images/cursor_hand.png')
-    this.load.image('bird_001', 'images/bird_001.png')
+    this.load.image('fish_001', 'images/fish_001.png')
   }
 }
