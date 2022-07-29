@@ -1,7 +1,6 @@
 import Phaser from 'phaser'
 import constants from '@/constants'
-import Wall from '@/components/Wall'
-import SpikeGroup from '@/components/SpikeGroup'
+import Wall from '@/components/Wall/Wall'
 
 export default class MainMenuScene extends Phaser.Scene {
   constructor() {
