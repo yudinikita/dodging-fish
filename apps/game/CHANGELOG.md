@@ -1,5 +1,11 @@
 # dodging-fish-game
 
+## 0.0.4
+
+### Patch Changes
+
+- f4b37f1: refactor(game): change scene with game on GameFieldScene
+
 ## 0.0.3
 
 ### Patch Changes
