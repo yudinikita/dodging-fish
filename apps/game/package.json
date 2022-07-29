@@ -15,8 +15,6 @@
     "vite-plugin-pwa": "^0.12.3"
   },
   "dependencies": {
-    "i18next": "^21.8.14",
-    "i18next-browser-languagedetector": "^6.1.4",
     "phaser": "^3.55.2",
     "phaser3-rex-plugins": "^1.1.71"
   }

@@ -1,6 +1,5 @@
 import Phaser from 'phaser'
-import constants from '@/constants'
-import Wall from '@/components/Wall/Wall'
+import constants from '../constants'
 
 export default class MainMenuScene extends Phaser.Scene {
   constructor() {
@@ -8,22 +7,20 @@ export default class MainMenuScene extends Phaser.Scene {
   }
 
   create() {
-    const { width, height } = this.cameras.main
-
     this.matter.world.setBounds(0, 0, constants.WIDTH, constants.HEIGHT)
 
     const rect = this.matter.add.image(
       constants.WIDTH / 2,
       constants.HEIGHT / 2,
       'bird_001',
-      0
+      0,
+      {}
     )
 
     rect.setScale(0.3)
 
     rect.setRectangle(80, 40, {
       chamfer: { radius: [22, 22, 22, 22] },
-      label: 'player',
     })
 
     rect.setOrigin(0.5, 0.5)
@@ -34,54 +31,18 @@ export default class MainMenuScene extends Phaser.Scene {
       Number.POSITIVE_INFINITY
     )
 
+    // rect.setVelocity(3, 1)
+    // rect.setAngularVelocity(0.01)
     rect.setBounce(0.5)
     rect.setFriction(0, 0, 0)
 
-    const wallLeft = new Wall(this, {
-      x: 2,
-      y: height / 2,
-      width: 2,
-      height,
-      label: 'wallLeft',
-      alpha: 0,
-    })
-    const wallRight = new Wall(this, {
-      x: width - 2,
-      y: height / 2,
-      width: 2,
-      height,
-      label: 'wallRight',
-      alpha: 0,
-    })
+    //this.matter.add.mouseSpring()
 
-    const wallTop = new Wall(this, {
-      x: width / 2,
-      y: 0,
-      width,
-      height: 150,
-      label: 'wallTop',
-      color: 0xcc_cc_cc,
-      alpha: 1,
+    this.add.text(0, 0, 'Dodging Fish', {
+      fontFamily: constants.FONT.FAMILY,
+      fontSize: '46px',
+      color: constants.FONT.COLOR,
     })
-    const wallBottom = new Wall(this, {
-      x: width / 2,
-      y: height,
-      width,
-      height: 150,
-      label: 'wallBottom',
-      color: 0xcc_cc_cc,
-      alpha: 1,
-    })
-
-    this.add
-      .text(width / 2, 10, 'Dodging Fish', {
-        fontFamily: constants.FONT.FAMILY,
-        fontSize: '36px',
-        color: constants.FONT.COLOR,
-        stroke: '#000',
-        strokeThickness: 4,
-      })
-      .setOrigin(0.5, 0)
 
     const vel = {
       x: 3,
@@ -96,37 +57,17 @@ export default class MainMenuScene extends Phaser.Scene {
       this
     )
 
-    this.matter.world.on(
-      Phaser.Physics.Matter.Events.COLLISION_START,
-      (
-        _event: Phaser.Physics.Matter.Events.CollisionStartEvent,
-        bodyA: Phaser.Types.Physics.Matter.MatterBodyConfig,
-        bodyB: Phaser.Types.Physics.Matter.MatterBodyConfig
-      ) => {
-        if ([bodyA.label, bodyB.label].includes('player')) {
-          if ([bodyA.label, bodyB.label].includes('wallLeft')) {
-            vel.x = 3
-            rect.setFlipX(false)
-            const randomColor = 0x1_00_00_00 + Math.random() * 0xff_ff_ff
-            wallTop.changeColor(randomColor)
-            wallBottom.changeColor(randomColor)
-          } else if ([bodyA.label, bodyB.label].includes('wallRight')) {
-            vel.x = -3
-            rect.setFlipX(true)
-            const randomColor = 0x1_00_00_00 + Math.random() * 0xff_ff_ff
-            wallTop.changeColor(randomColor)
-            wallBottom.changeColor(randomColor)
-          } else if (
-            [bodyA.label, bodyB.label].includes('wallTop') ||
-            [bodyA.label, bodyB.label].includes('wallBottom')
-          ) {
-            vel.x = 3
-            rect.resetFlip()
-            rect.setVelocity(0, 0)
-            rect.setPosition(constants.WIDTH / 2, constants.HEIGHT / 2)
-          }
-        }
+    this.matter.world.on('collisionstart', (_event: any, b1: any) => {
+      if (b1.id === 2) {
+        vel.x = 3
+        rect.setFlipX(false)
+      } else if (b1.id === 3) {
+        vel.x = -3
+        rect.setFlipX(true)
+      } else {
+        rect.setVelocity(0, 0)
+        rect.setPosition(constants.WIDTH / 2, constants.HEIGHT / 2)
       }
-    )
+    })
   }
 }
