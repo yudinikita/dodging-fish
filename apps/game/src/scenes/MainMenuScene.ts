@@ -16,7 +16,7 @@ export default class MainMenuScene extends Phaser.Scene {
     const scoreText = this.add
       .text(width / 2, height / 2, '', {
         fontFamily: constants.FONT.FAMILY,
-        fontSize: '72px',
+        fontSize: '320px',
         color: constants.FONT.COLOR,
         stroke: '#000',
         strokeThickness: 4,
@@ -26,7 +26,7 @@ export default class MainMenuScene extends Phaser.Scene {
     const player = this.matter.add.image(
       constants.WIDTH / 2,
       constants.HEIGHT / 2,
-      'bird_001',
+      'fish_001',
       0
     )
 
@@ -39,10 +39,8 @@ export default class MainMenuScene extends Phaser.Scene {
       }
     )
 
-    player.setScale(0.3)
-
-    player.setRectangle(80, 40, {
-      chamfer: { radius: [22, 22, 22, 22] },
+    player.setRectangle(150, 100, {
+      chamfer: { radius: 50 },
       label: 'player',
     })
 
@@ -54,33 +52,33 @@ export default class MainMenuScene extends Phaser.Scene {
       Number.POSITIVE_INFINITY
     )
 
-    player.setBounce(0.5)
+    player.setBounce(1)
     player.setFriction(0, 0, 0)
 
     const wallLeft = new Wall(this, {
-      x: 2,
+      x: 10,
       y: height / 2,
-      width: 2,
+      width: 4,
       height,
       label: 'wallLeft',
       alpha: 0,
     })
     const wallRight = new Wall(this, {
-      x: width - 2,
+      x: width - 10,
       y: height / 2,
-      width: 2,
+      width: 6,
       height,
       label: 'wallRight',
       alpha: 0,
     })
 
-    const wallHeight = 45
+    const wallHeight = 150
 
     const wallTop = new Wall(this, {
       x: width / 2,
-      y: wallHeight / 2,
+      y: wallHeight / 4.5,
       width,
-      height: wallHeight,
+      height: wallHeight / 2.5,
       label: 'wallTop',
       color: 0xcc_cc_cc,
       alpha: 1,
@@ -99,58 +97,58 @@ export default class MainMenuScene extends Phaser.Scene {
     scoreText.setText(score)
 
     const spikeGroup = new SpikeGroup(this, {
-      x: constants.SPIKE.WIDTH / 2,
-      y: height - wallHeight - 7,
+      x: constants.SPIKE.WIDTH / 7,
+      y: height - wallHeight - constants.SPIKE.HEIGHT / 5,
       count: 7,
       label: 'spike',
       color: 0xcc_cc_cc,
       alpha: 1,
       angle: 0,
-      space: 7,
+      space: 4,
       orientation: 'horizontal',
     })
 
     const spikeGroup1 = new SpikeGroup(this, {
-      x: constants.SPIKE.WIDTH / 2,
-      y: wallHeight + 7,
+      x: constants.SPIKE.WIDTH / 7,
+      y: wallHeight / 4 + constants.SPIKE.HEIGHT / 2,
       count: 7,
       label: 'spike',
       color: 0xcc_cc_cc,
       alpha: 1,
       angle: 180,
-      space: 7,
+      space: 4,
       orientation: 'horizontal',
     })
 
     const spikeGroup2 = new SpikeGroup(this, {
       x: 8,
-      y: constants.SPIKE.HEIGHT * 3,
+      y: constants.SPIKE.HEIGHT,
       count: 0,
       maximum: 11,
       label: 'spike',
       color: 0xcc_cc_cc,
       alpha: 1,
       angle: 90,
-      space: 7,
+      space: 4,
       orientation: 'vertical',
     })
 
     const spikeGroup3 = new SpikeGroup(this, {
       x: width - 8,
-      y: constants.SPIKE.HEIGHT * 3,
+      y: constants.SPIKE.HEIGHT,
       count: 0,
       maximum: 11,
       label: 'spike',
       color: 0xcc_cc_cc,
       alpha: 1,
       angle: -90,
-      space: 7,
+      space: 4,
       orientation: 'vertical',
     })
 
     const vel = {
-      x: 3,
-      y: -3,
+      x: 10,
+      y: -14,
     }
 
     this.input.on(
@@ -170,7 +168,7 @@ export default class MainMenuScene extends Phaser.Scene {
       ) => {
         if ([bodyA.label, bodyB.label].includes('player')) {
           if ([bodyA.label, bodyB.label].includes('wallLeft')) {
-            vel.x = 3
+            vel.x = Math.abs(vel.x)
             player.setFlipX(false)
             player.data.values.score++
 
@@ -187,7 +185,7 @@ export default class MainMenuScene extends Phaser.Scene {
             spikeGroup2.changeCount(0)
             spikeGroup3.changeCount(player.data.values.score)
           } else if ([bodyA.label, bodyB.label].includes('wallRight')) {
-            vel.x = -3
+            vel.x = Math.abs(vel.x) * -1
             player.setFlipX(true)
             player.data.values.score++
 
@@ -207,7 +205,7 @@ export default class MainMenuScene extends Phaser.Scene {
             [bodyA.label, bodyB.label].includes('wallTop') ||
             [bodyA.label, bodyB.label].includes('wallBottom')
           ) {
-            vel.x = 3
+            vel.x = Math.abs(vel.x)
 
             player.resetFlip()
             player.setVelocity(0, 0)
@@ -225,7 +223,7 @@ export default class MainMenuScene extends Phaser.Scene {
             spikeGroup2.changeCount(0)
             spikeGroup3.changeCount(0)
           } else if ([bodyA.label, bodyB.label].includes('spike')) {
-            vel.x = 3
+            vel.x = Math.abs(vel.x)
 
             player.resetFlip()
             player.setVelocity(0, 0)
