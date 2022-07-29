@@ -1,5 +1,12 @@
 # dodging-fish-game
 
+## 0.0.3
+
+### Patch Changes
+
+- 583e4ec: feat(game): add walls
+- 583e4ec: feat(game): add i18next translation
+
 ## 0.0.2
 
 ### Patch Changes
