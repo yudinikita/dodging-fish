@@ -16,6 +16,7 @@ type SpikeGroupConfig = {
 
 export default class SpikeGroup {
   private spikes: Spike[] = []
+  private currentSpikes = 0
   private maximumSpikes = 0
 
   constructor(scene: Phaser.Scene, config: SpikeGroupConfig) {
@@ -32,6 +33,7 @@ export default class SpikeGroup {
       orientation = 'horizontal',
     } = config
 
+    this.currentSpikes = count
     this.maximumSpikes = maximum
 
     const spikeWidth = constants.SPIKE.WIDTH
@@ -88,6 +90,7 @@ export default class SpikeGroup {
 
   public changeCount(count: number) {
     if (count > this.maximumSpikes) count = this.maximumSpikes
+    this.currentSpikes = count
 
     this.hideSpikes()
 
@@ -134,5 +137,9 @@ export default class SpikeGroup {
     }
 
     return this
+  }
+
+  public get getCurrentCount() {
+    return this.currentSpikes
   }
 }

@@ -21,10 +21,14 @@ const constants = {
   SCENES: {
     LOADING: 'loading-scene',
     MAIN_MENU: 'main-menu-scene',
+    GAME_FIELD: 'game-field-scene',
   },
   SPIKE: {
     WIDTH: 145,
     HEIGHT: 87,
+  },
+  WALL: {
+    HEIGHT: 150,
   },
 }
 
