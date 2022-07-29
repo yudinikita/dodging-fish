@@ -4,7 +4,7 @@ import SceneList from '@/config/sceneList'
 
 const gameConfig: Phaser.Types.Core.GameConfig = {
   title: 'Dont Touch',
-  version: '1.0.0',
+  version: '0.0.2',
   type: Phaser.AUTO,
   parent: 'game-container',
   backgroundColor: '#3e66d2',
@@ -20,7 +20,7 @@ const gameConfig: Phaser.Types.Core.GameConfig = {
     matter: {
       debug: constants.DEBUG,
       gravity: {
-        y: 0.3,
+        y: 2,
       },
     },
   },
