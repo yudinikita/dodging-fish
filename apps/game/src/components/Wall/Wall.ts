@@ -28,7 +28,7 @@ export default class Wall extends Phaser.GameObjects.Container {
     })
   }
 
-  public changeColor(color: number, alpha?: number) {
+  public setFillStyle(color: number, alpha?: number) {
     this.rect.setFillStyle(color, alpha)
 
     return this

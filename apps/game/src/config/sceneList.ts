@@ -1,6 +1,6 @@
 import LoadingScene from '@/scenes/LoadingScene'
-import MainMenuScene from '@/scenes/MainMenuScene'
+import GameFieldScene from '@/scenes/GameFieldScene'
 
-const SceneList = [LoadingScene, MainMenuScene]
+const SceneList = [LoadingScene, GameFieldScene]
 
 export default SceneList

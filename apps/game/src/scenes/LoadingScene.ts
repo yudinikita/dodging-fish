@@ -60,7 +60,7 @@ export default class LoadingScene extends Phaser.Scene {
       this.circularProgress.destroy()
 
       this.scene.stop(constants.SCENES.LOADING)
-      this.scene.switch(constants.SCENES.MAIN_MENU)
+      this.scene.switch(constants.SCENES.GAME_FIELD)
     })
   }
 
