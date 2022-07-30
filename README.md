@@ -23,7 +23,7 @@ The fish is in an enclosed space, with fixed spikes on the bottom and top, and t
 In addition, there are fish roe that need to be collected on the level, which adds additional complexity to the gameplay.
 The game has minimalistic graphics and an extremely challenging gameplay process, which will appeal to people who like challenge and difficulty.
 
-<img align='right' src="https://user-images.githubusercontent.com/36636599/181754140-5ff464db-50ef-4158-95dc-72ca9b352c29.gif" width="100">
+<img align='right' src="https://user-images.githubusercontent.com/36636599/181757754-80294aac-1d87-4e75-97aa-a75daede5de1.gif" width="100">
 
 ## 🔨 Built with
 - [Phaser3](https://github.com/photonstorm/phaser) - Game engine
@@ -40,7 +40,7 @@ The game has minimalistic graphics and an extremely challenging gameplay process
 | --- | --- | --- | --- |
 | last 2 versions | last 2 versions | last 2 versions | last 2 versions |
 
-<img align='right' src="https://user-images.githubusercontent.com/36636599/181757754-80294aac-1d87-4e75-97aa-a75daede5de1.gif" width="100">
+<img align='right' src="https://user-images.githubusercontent.com/36636599/181864416-3d780ad4-351f-4f69-a349-3e34674896f3.gif" width="100">
 
 ## 📝 Getting started
 
