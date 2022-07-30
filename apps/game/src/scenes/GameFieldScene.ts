@@ -109,7 +109,7 @@ export default class GameFieldScene extends Phaser.Scene {
       width,
       height: wallHeight / 2.5,
       label: 'wallTop',
-      color: 0xcc_cc_cc,
+      color: 0x80_80_80,
       alpha: 1,
     })
     this.wallBottom = new Wall(this, {
@@ -118,7 +118,7 @@ export default class GameFieldScene extends Phaser.Scene {
       width,
       height: wallHeight,
       label: 'wallBottom',
-      color: 0xcc_cc_cc,
+      color: 0x80_80_80,
       alpha: 1,
     })
   }
@@ -259,7 +259,7 @@ export default class GameFieldScene extends Phaser.Scene {
     this.player.setPosition(constants.WIDTH / 2, constants.HEIGHT / 2)
     this.player.data.values.score = 0
 
-    this.changeColor(0xcc_cc_cc)
+    this.changeColor(0x80_80_80)
 
     this.spikeGroupLeft.changeCount(0)
     this.spikeGroupRight.changeCount(0)
