@@ -1,5 +1,11 @@
 # dodging-fish-game
 
+## 0.0.5
+
+### Patch Changes
+
+- ef41e1e: Feat/UI
+
 ## 0.0.4
 
 ### Patch Changes
