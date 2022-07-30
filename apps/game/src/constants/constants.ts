@@ -30,6 +30,13 @@ const constants = {
   WALL: {
     HEIGHT: 150,
   },
+  COLORS: {
+    ACCENT: '#2BAFF6',
+    DEFAULT: {
+      BACKGROUND: '#EBEBEB',
+      SPIKE: '#808080',
+    },
+  },
 }
 
 export default constants
