@@ -113,6 +113,20 @@ export default class SpikeGroup {
     return this
   }
 
+  public static getNeededSpikes(score: number) {
+    if (score === 0) return 0
+    if (score === 1) return 2
+    if (score < 5) return 3
+    if (score < 12) return 4
+    if (score < 20) return 5
+    if (score < 30) return 6
+    if (score < 40) return Phaser.Math.Between(4, 7)
+    if (score < 50) return Phaser.Math.Between(6, 8)
+    if (score < 60) return Phaser.Math.Between(6, 9)
+    if (score >= 60) return Phaser.Math.Between(7, 9)
+    return Phaser.Math.Between(3, 9)
+  }
+
   private showSpike(index: number) {
     const spike = this.spikes[index]
 
