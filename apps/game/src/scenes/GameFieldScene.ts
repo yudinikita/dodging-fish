@@ -5,8 +5,6 @@ import Wall from '@/components/Wall'
 import SpikeGroup from '@/components/SpikeGroup'
 
 export default class GameFieldScene extends Phaser.Scene {
-  private cursors!: Phaser.Types.Input.Keyboard.CursorKeys
-
   private scoreText!: Phaser.GameObjects.Text
   private player!: Player
 
@@ -25,10 +23,6 @@ export default class GameFieldScene extends Phaser.Scene {
     super(constants.SCENES.GAME_FIELD)
   }
 
-  init() {
-    this.cursors = this.input.keyboard.createCursorKeys()
-  }
-
   create() {
     const { width, height } = this.cameras.main
 
@@ -45,14 +39,9 @@ export default class GameFieldScene extends Phaser.Scene {
     this.addWalls()
     this.addSpikes()
     this.addCollisionStartEvent()
+    this.addPauseEvent()
 
     this.startGame()
-  }
-
-  update() {
-    if (this.cursors.space.isDown) {
-      this.player.jump()
-    }
   }
 
   private initPlayerData() {
@@ -63,7 +52,8 @@ export default class GameFieldScene extends Phaser.Scene {
     this.player.on(
       'changedata-score',
       (gameObject: Phaser.GameObjects.GameObject, value: number) => {
-        this.scoreText.setText(value.toString())
+        const score = Phaser.Utils.String.Pad(value.toString(), 2, '0', 1)
+        this.scoreText.setText(score)
       },
       this
     )
@@ -75,10 +65,8 @@ export default class GameFieldScene extends Phaser.Scene {
     this.scoreText = this.add
       .text(width / 2, height / 2, '', {
         fontFamily: constants.FONT.FAMILY,
-        fontSize: '320px',
-        color: constants.FONT.COLOR,
-        stroke: '#000',
-        strokeThickness: 4,
+        fontSize: '480px',
+        color: constants.COLORS.DEFAULT.SPIKE + '40',
       })
       .setOrigin(0.5, 0.5)
   }
@@ -117,11 +105,11 @@ export default class GameFieldScene extends Phaser.Scene {
 
     this.wallTop = new Wall(this, {
       x: width / 2,
-      y: wallHeight / 4.5,
+      y: wallHeight / 5,
       width,
       height: wallHeight / 2.5,
       label: 'wallTop',
-      color: 0xcc_cc_cc,
+      color: 0x80_80_80,
       alpha: 1,
     })
     this.wallBottom = new Wall(this, {
@@ -130,7 +118,7 @@ export default class GameFieldScene extends Phaser.Scene {
       width,
       height: wallHeight,
       label: 'wallBottom',
-      color: 0xcc_cc_cc,
+      color: 0x80_80_80,
       alpha: 1,
     })
   }
@@ -223,6 +211,17 @@ export default class GameFieldScene extends Phaser.Scene {
     )
   }
 
+  private addPauseEvent() {
+    this.events.on(
+      Phaser.Scenes.Events.PAUSE,
+      () => {
+        this.scoreText.setVisible(false)
+        this.player.setVisible(false)
+      },
+      this
+    )
+  }
+
   private nextStep() {
     this.player.flip()
     this.player.data.values.score++
@@ -260,7 +259,7 @@ export default class GameFieldScene extends Phaser.Scene {
     this.player.setPosition(constants.WIDTH / 2, constants.HEIGHT / 2)
     this.player.data.values.score = 0
 
-    this.changeColor(0xcc_cc_cc)
+    this.changeColor(0x80_80_80)
 
     this.spikeGroupLeft.changeCount(0)
     this.spikeGroupRight.changeCount(0)
@@ -271,6 +270,8 @@ export default class GameFieldScene extends Phaser.Scene {
   private gameOver() {
     this.startGame()
 
-    // TODO: add game over screen
+    this.scene.pause(constants.SCENES.GAME_FIELD)
+    this.scene.resume(constants.SCENES.MAIN_MENU)
+    this.scene.setVisible(true, constants.SCENES.MAIN_MENU)
   }
 }
