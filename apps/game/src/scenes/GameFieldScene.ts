@@ -105,7 +105,7 @@ export default class GameFieldScene extends Phaser.Scene {
 
     this.wallTop = new Wall(this, {
       x: width / 2,
-      y: wallHeight / 4.5,
+      y: wallHeight / 5,
       width,
       height: wallHeight / 2.5,
       label: 'wallTop',
