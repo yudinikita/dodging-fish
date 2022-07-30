@@ -39,6 +39,7 @@ export default class GameFieldScene extends Phaser.Scene {
     this.addWalls()
     this.addSpikes()
     this.addCollisionStartEvent()
+    this.addPauseEvent()
 
     this.startGame()
   }
@@ -211,6 +212,17 @@ export default class GameFieldScene extends Phaser.Scene {
     )
   }
 
+  private addPauseEvent() {
+    this.events.on(
+      Phaser.Scenes.Events.PAUSE,
+      () => {
+        this.scoreText.setVisible(false)
+        this.player.setVisible(false)
+      },
+      this
+    )
+  }
+
   private nextStep() {
     this.player.flip()
     this.player.data.values.score++
@@ -259,6 +271,8 @@ export default class GameFieldScene extends Phaser.Scene {
   private gameOver() {
     this.startGame()
 
-    // TODO: add game over screen
+    this.scene.pause(constants.SCENES.GAME_FIELD)
+    this.scene.resume(constants.SCENES.MAIN_MENU)
+    this.scene.setVisible(true, constants.SCENES.MAIN_MENU)
   }
 }
