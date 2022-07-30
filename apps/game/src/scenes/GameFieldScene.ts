@@ -43,12 +43,6 @@ export default class GameFieldScene extends Phaser.Scene {
     this.startGame()
   }
 
-  update() {
-    if (this.cursors.space.isDown) {
-      this.player.jump()
-    }
-  }
-
   private initPlayerData() {
     this.player.setDataEnabled()
 
