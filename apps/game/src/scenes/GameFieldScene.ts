@@ -241,7 +241,9 @@ export default class GameFieldScene extends Phaser.Scene {
   }
 
   private changeCountSpikes() {
-    const countSpikes = this.player.data.values.score
+    const countSpikes = SpikeGroup.getNeededSpikes(
+      this.player.data.values.score
+    )
 
     const countRightSpikes =
       this.spikeGroupLeft.getCurrentCount > 0 ? countSpikes : 0
