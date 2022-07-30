@@ -52,7 +52,8 @@ export default class GameFieldScene extends Phaser.Scene {
     this.player.on(
       'changedata-score',
       (gameObject: Phaser.GameObjects.GameObject, value: number) => {
-        this.scoreText.setText(value.toString())
+        const score = Phaser.Utils.String.Pad(value.toString(), 2, '0', 1)
+        this.scoreText.setText(score)
       },
       this
     )
@@ -64,10 +65,8 @@ export default class GameFieldScene extends Phaser.Scene {
     this.scoreText = this.add
       .text(width / 2, height / 2, '', {
         fontFamily: constants.FONT.FAMILY,
-        fontSize: '320px',
-        color: constants.FONT.COLOR,
-        stroke: '#000',
-        strokeThickness: 4,
+        fontSize: '480px',
+        color: constants.COLORS.DEFAULT.SPIKE + '40',
       })
       .setOrigin(0.5, 0.5)
   }
