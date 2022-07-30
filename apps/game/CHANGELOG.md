@@ -1,5 +1,11 @@
 # dodging-fish-game
 
+## 0.0.6
+
+### Patch Changes
+
+- bcc88be: feat(game): add amount spikes
+
 ## 0.0.5
 
 ### Patch Changes
