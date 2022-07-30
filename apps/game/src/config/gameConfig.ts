@@ -7,7 +7,7 @@ const gameConfig: Phaser.Types.Core.GameConfig = {
   version: '0.0.4',
   type: Phaser.AUTO,
   parent: 'game-container',
-  backgroundColor: '#3e66d2',
+  backgroundColor: constants.COLORS.DEFAULT.BACKGROUND,
   scale: {
     mode: Phaser.Scale.FIT,
     autoCenter: Phaser.Scale.CENTER_BOTH,
