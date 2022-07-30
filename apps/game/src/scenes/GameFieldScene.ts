@@ -5,8 +5,6 @@ import Wall from '@/components/Wall'
 import SpikeGroup from '@/components/SpikeGroup'
 
 export default class GameFieldScene extends Phaser.Scene {
-  private cursors!: Phaser.Types.Input.Keyboard.CursorKeys
-
   private scoreText!: Phaser.GameObjects.Text
   private player!: Player
 
@@ -23,10 +21,6 @@ export default class GameFieldScene extends Phaser.Scene {
 
   constructor() {
     super(constants.SCENES.GAME_FIELD)
-  }
-
-  init() {
-    this.cursors = this.input.keyboard.createCursorKeys()
   }
 
   create() {

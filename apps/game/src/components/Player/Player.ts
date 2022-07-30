@@ -12,6 +12,8 @@ export default class Player extends Actor {
       y: -14,
     }
 
+    this.setScale(1.3)
+
     this.setRectangle(150, 100, {
       chamfer: { radius: 50 },
       label: 'player',
