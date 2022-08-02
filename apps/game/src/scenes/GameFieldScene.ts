@@ -226,6 +226,10 @@ export default class GameFieldScene extends Phaser.Scene {
   }
 
   private nextStep() {
+    if (this.player.data.values.score <= 100) {
+      this.player.addVelocity(0.04, 0.04)
+    }
+
     this.player.flip()
     this.player.data.values.score++
 
