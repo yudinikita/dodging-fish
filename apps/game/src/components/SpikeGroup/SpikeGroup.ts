@@ -12,12 +12,15 @@ type SpikeGroupConfig = {
   angle?: number
   space?: number
   orientation?: 'horizontal' | 'vertical'
+  isAnimation?: boolean
 }
 
 export default class SpikeGroup {
+  private scene: Phaser.Scene
   private spikes: Spike[] = []
   private currentSpikes = 0
   private maximumSpikes = 0
+  private isAnimation: boolean
 
   constructor(scene: Phaser.Scene, config: SpikeGroupConfig) {
     const {
@@ -31,8 +34,11 @@ export default class SpikeGroup {
       angle,
       space = 0,
       orientation = 'horizontal',
+      isAnimation = false,
     } = config
 
+    this.scene = scene
+    this.isAnimation = isAnimation
     this.currentSpikes = count
     this.maximumSpikes = maximum
 
@@ -130,6 +136,14 @@ export default class SpikeGroup {
   private showSpike(index: number) {
     const spike = this.spikes[index]
 
+    if (this.isAnimation) {
+      this.scene.tweens.add({
+        targets: spike,
+        scale: 1,
+        duration: 300,
+      })
+    }
+
     spike.setVisible(true)
     spike.setActive(true)
 
@@ -142,6 +156,14 @@ export default class SpikeGroup {
 
   private hideSpikes() {
     for (const spike of this.spikes) {
+      if (this.isAnimation) {
+        this.scene.tweens.add({
+          targets: spike,
+          scale: 0,
+          duration: 300,
+        })
+      }
+
       spike.setVisible(false)
       spike.setActive(false)
 

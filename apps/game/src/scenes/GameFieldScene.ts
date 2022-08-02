@@ -141,6 +141,7 @@ export default class GameFieldScene extends Phaser.Scene {
       angle: 90,
       space: 4,
       orientation: 'vertical',
+      isAnimation: true,
     })
 
     this.spikeGroupRight = new SpikeGroup(this, {
@@ -154,6 +155,7 @@ export default class GameFieldScene extends Phaser.Scene {
       angle: -90,
       space: 4,
       orientation: 'vertical',
+      isAnimation: true,
     })
 
     this.spikeGroupTop = new SpikeGroup(this, {
