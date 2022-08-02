@@ -1,4 +1,4 @@
-const DEBUG = true
+const DEBUG = false
 
 const SCALE = 1
 
@@ -22,6 +22,8 @@ const constants = {
     LOADING: 'loading-scene',
     MAIN_MENU: 'main-menu-scene',
     GAME_FIELD: 'game-field-scene',
+    GAME_OVER: 'game-over-scene',
+    GAME_INFO_UI: 'game-info-ui-scene',
   },
   SPIKE: {
     WIDTH: 145,

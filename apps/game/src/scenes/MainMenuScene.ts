@@ -7,13 +7,12 @@ export default class MainMenuScene extends Phaser.Scene {
   }
 
   create() {
-    this.addGameTitle()
-    this.addBestScore()
-    this.addGamesPlayed()
     this.addTapToJump()
     this.addPlayerSkin()
+    this.addInfoUi()
 
     this.startGameEvent()
+    this.addResumeEvent()
   }
 
   private startGameEvent() {
@@ -22,56 +21,27 @@ export default class MainMenuScene extends Phaser.Scene {
       () => {
         this.scene.pause()
         this.scene.setVisible(false)
+
+        this.scene.pause(constants.SCENES.GAME_INFO_UI)
+        this.scene.setVisible(false, constants.SCENES.GAME_INFO_UI)
+
         this.scene.launch(constants.SCENES.GAME_FIELD)
       },
       this
     )
   }
 
-  private addGameTitle() {
-    const { width } = this.cameras.main
+  private addResumeEvent() {
+    this.events.on(Phaser.Scenes.Events.START, () => {
+      this.scene.launch(constants.SCENES.GAME_FIELD)
+      this.scene.pause(constants.SCENES.GAME_FIELD)
 
-    this.add
-      .text(width / 2, 250, 'DODGING FISH', {
-        fontFamily: constants.FONT.FAMILY,
-        fontSize: '112px',
-        color: constants.COLORS.DEFAULT.SPIKE,
-      })
-      .setOrigin(0.5, 0.5)
+      this.scene.launch(constants.SCENES.GAME_INFO_UI)
+    })
   }
 
-  private addBestScore() {
-    const { width, height } = this.cameras.main
-
-    this.add
-      .text(
-        width / 2,
-        height - 400,
-        (i18next.t('Best score') + ' 132').toUpperCase(),
-        {
-          fontFamily: constants.FONT.FAMILY,
-          fontSize: '72px',
-          color: constants.COLORS.DEFAULT.SPIKE,
-        }
-      )
-      .setOrigin(0.5, 0.5)
-  }
-
-  private addGamesPlayed() {
-    const { width, height } = this.cameras.main
-
-    this.add
-      .text(
-        width / 2,
-        height - 300,
-        (i18next.t('Games played') + ' 860').toUpperCase(),
-        {
-          fontFamily: constants.FONT.FAMILY,
-          fontSize: '72px',
-          color: constants.COLORS.DEFAULT.SPIKE,
-        }
-      )
-      .setOrigin(0.5, 0.5)
+  private addInfoUi() {
+    this.scene.run(constants.SCENES.GAME_INFO_UI)
   }
 
   private addTapToJump() {
@@ -96,7 +66,7 @@ export default class MainMenuScene extends Phaser.Scene {
     const { width, height } = this.cameras.main
 
     const player = this.add
-      .image(width / 2, height / 2, 'fish_001', 0)
+      .image(width / 2, height / 2, 'fish', 'fish_001')
       .setScale(1.3)
 
     this.add.tween({
