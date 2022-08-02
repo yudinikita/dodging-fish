@@ -3,6 +3,7 @@ import constants from '@/constants'
 import Player from '@/components/Player'
 import Wall from '@/components/Wall'
 import SpikeGroup from '@/components/SpikeGroup'
+import getCurrentColor from '@/helpers/getCurrentColor'
 
 export default class GameFieldScene extends Phaser.Scene {
   private scoreText!: Phaser.GameObjects.Text
@@ -228,7 +229,7 @@ export default class GameFieldScene extends Phaser.Scene {
     this.player.flip()
     this.player.data.values.score++
 
-    const color = this.getCurrentColor(this.player.data.get('score'))
+    const color = getCurrentColor(this.player.data.get('score'))
     this.changeColor(color)
     this.changeCountSpikes()
   }
