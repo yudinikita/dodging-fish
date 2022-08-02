@@ -281,10 +281,8 @@ export default class GameFieldScene extends Phaser.Scene {
   private gameOver() {
     this.player.death()
 
-    this.startGame()
-
-    this.scene.pause(constants.SCENES.GAME_FIELD)
-    this.scene.resume(constants.SCENES.MAIN_MENU)
-    this.scene.setVisible(true, constants.SCENES.MAIN_MENU)
+    this.scene.run(constants.SCENES.GAME_OVER, {
+      score: this.player.data.values.score,
+    })
   }
 }
