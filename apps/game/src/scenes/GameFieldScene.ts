@@ -4,6 +4,8 @@ import Player from '@/components/Player'
 import Wall from '@/components/Wall'
 import SpikeGroup from '@/components/SpikeGroup'
 import getCurrentColor from '@/helpers/getCurrentColor'
+import Roe from '@/components/Roe'
+import getCurrentRoe from '@/helpers/getCurrentRoe'
 
 export default class GameFieldScene extends Phaser.Scene {
   private scoreText!: Phaser.GameObjects.Text
@@ -19,19 +21,20 @@ export default class GameFieldScene extends Phaser.Scene {
   private spikeGroupRight!: SpikeGroup
   private spikeGroupTop!: SpikeGroup
   private spikeGroupBottom!: SpikeGroup
+  private roe?: Roe | null
 
   constructor() {
     super(constants.SCENES.GAME_FIELD)
   }
 
   create() {
-    const { width, height } = this.cameras.main
+    const { width, height, centerX, centerY } = this.cameras.main
 
     this.matter.world.setBounds(0, 0, width, height)
 
     this.addScoreText()
 
-    this.player = new Player(this, width / 2, height / 2)
+    this.player = new Player(this, centerX, centerY)
     this.initPlayerData()
     this.addPlayerController()
 
@@ -49,6 +52,7 @@ export default class GameFieldScene extends Phaser.Scene {
     this.player.setDataEnabled()
 
     this.player.data.set('score', 0)
+    this.player.data.set('roe', 0)
 
     this.player.on(
       'changedata-score',
@@ -61,10 +65,10 @@ export default class GameFieldScene extends Phaser.Scene {
   }
 
   private addScoreText() {
-    const { width, height } = this.cameras.main
+    const { centerX, centerY } = this.cameras.main
 
     this.scoreText = this.add
-      .text(width / 2, height / 2, '', {
+      .text(centerX, centerY, '', {
         fontFamily: constants.FONT.FAMILY,
         fontSize: '480px',
         color: constants.COLORS.DEFAULT.SPIKE + '40',
@@ -210,6 +214,10 @@ export default class GameFieldScene extends Phaser.Scene {
             [bodyA.label, bodyB.label].includes('spike')
           ) {
             this.gameOver()
+          } else if ([bodyA.label, bodyB.label].includes('roe')) {
+            this.player.data.values.roe += this.roe?.getValue || 0
+            this.roe?.remove()
+            this.roe = null
           }
         }
       }
@@ -238,6 +246,27 @@ export default class GameFieldScene extends Phaser.Scene {
     const color = getCurrentColor(this.player.data.get('score'))
     this.changeColor(color)
     this.changeCountSpikes()
+    this.spawnRoe()
+  }
+
+  private spawnRoe() {
+    if (this.roe) return
+
+    const { width } = this.cameras.main
+
+    const roeData = getCurrentRoe(this.player.data.get('score'))
+
+    const roeX =
+      this.player.direction === 'right'
+        ? width - constants.SPIKE.WIDTH
+        : constants.SPIKE.WIDTH
+
+    const roeY = Phaser.Math.RND.between(300, constants.HEIGHT - 400)
+
+    const roeValue = roeData.value
+
+    this.roe = new Roe(this, roeX, roeY, roeValue)
+    this.roe.setTexture('roe', roeData.frame)
   }
 
   private changeColor(color: { background: number; spike: number }) {
@@ -279,6 +308,9 @@ export default class GameFieldScene extends Phaser.Scene {
   }
 
   private gameOver() {
+    this.roe?.remove()
+    this.roe = null
+
     this.player.death()
 
     this.scene.run(constants.SCENES.GAME_OVER, {
