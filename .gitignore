@@ -6,7 +6,6 @@ node_modules
 # testing
 /coverage
 coverage
-types
 
 # next.js
 /.next/
