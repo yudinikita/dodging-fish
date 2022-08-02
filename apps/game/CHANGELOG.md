@@ -1,5 +1,11 @@
 # dodging-fish-game
 
+## 0.0.9
+
+### Patch Changes
+
+- f06ff3b: Feat/player trace and death
+
 ## 0.0.8
 
 ### Patch Changes
