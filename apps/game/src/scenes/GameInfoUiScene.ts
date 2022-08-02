@@ -1,5 +1,6 @@
 import Phaser from 'phaser'
 import i18next from 'i18next'
+import LocalStorageData from 'phaser3-rex-plugins/plugins/localstorage-data'
 import constants from '@/constants'
 
 type GameInfoUiData = {
@@ -7,10 +8,12 @@ type GameInfoUiData = {
 }
 
 export default class GameInfoUiScene extends Phaser.Scene {
+  private localStorageData!: LocalStorageData
   private color?: number
   private gameTitle!: Phaser.GameObjects.Text
   private bestScoreText!: Phaser.GameObjects.Text
   private gamesPlayedText!: Phaser.GameObjects.Text
+  private roeText!: Phaser.GameObjects.Text
 
   constructor() {
     super(constants.SCENES.GAME_INFO_UI)
@@ -21,14 +24,64 @@ export default class GameInfoUiScene extends Phaser.Scene {
   }
 
   create() {
+    this.addLocalStorageData()
     this.addGameTitle()
     this.addBestScore()
     this.addGamesPlayed()
+    this.addRoeText()
     this.addResumeEvent()
+    this.addLocalStorageEvents()
 
     if (this.color) {
       this.changeColor(this.color)
     }
+  }
+
+  private addLocalStorageData() {
+    this.localStorageData = new LocalStorageData(this, {
+      name: constants.SCENES.GAME_INFO_UI,
+      default: {
+        bestScore: 0,
+        gamesPlayed: 0,
+        roe: 0,
+      },
+    })
+
+    this.data.set('localStorageData', this.localStorageData)
+  }
+
+  private addLocalStorageEvents() {
+    this.localStorageData.events.on(
+      'changedata-bestScore',
+      () => {
+        const bestScore = this.localStorageData.get('bestScore')
+        const text = (i18next.t('Best score') + ' ' + bestScore).toUpperCase()
+        this.bestScoreText.setText(text)
+      },
+      this
+    )
+
+    this.localStorageData.events.on(
+      'changedata-gamesPlayed',
+      () => {
+        const gamesPlayed = this.localStorageData.get('gamesPlayed')
+        const text = (
+          i18next.t('Games played') +
+          ' ' +
+          gamesPlayed
+        ).toUpperCase()
+        this.gamesPlayedText.setText(text)
+      },
+      this
+    )
+
+    this.localStorageData.events.on(
+      'changedata-roe',
+      () => {
+        this.roeText.setText(String(this.localStorageData.get('roe')))
+      },
+      this
+    )
   }
 
   private changeColor(color: number) {
@@ -41,7 +94,7 @@ export default class GameInfoUiScene extends Phaser.Scene {
   private addResumeEvent() {
     this.events.on(
       Phaser.Scenes.Events.RESUME,
-      (scene: Phaser.Scene, { color }: { color: number }) => {
+      (scene: Phaser.Scene, { color }: GameInfoUiData) => {
         if (color) {
           this.changeColor(color)
         }
@@ -65,34 +118,47 @@ export default class GameInfoUiScene extends Phaser.Scene {
   private addBestScore() {
     const { width, height } = this.cameras.main
 
+    const bestScore = this.localStorageData.get('bestScore') as number
+    const text = (i18next.t('Best score') + ' ' + bestScore).toUpperCase()
+
     this.bestScoreText = this.add
-      .text(
-        width / 2,
-        height - 400,
-        (i18next.t('Best score') + ' 132').toUpperCase(),
-        {
-          fontFamily: constants.FONT.FAMILY,
-          fontSize: '72px',
-          color: constants.COLORS.DEFAULT.SPIKE,
-        }
-      )
+      .text(width / 2, height - 400, text, {
+        fontFamily: constants.FONT.FAMILY,
+        fontSize: '72px',
+        color: constants.COLORS.DEFAULT.SPIKE,
+      })
       .setOrigin(0.5, 0.5)
   }
 
   private addGamesPlayed() {
     const { width, height } = this.cameras.main
 
+    const gamesPlayed = this.localStorageData.get('gamesPlayed') as number
+    const text = (i18next.t('Games played') + ' ' + gamesPlayed).toUpperCase()
+
     this.gamesPlayedText = this.add
-      .text(
-        width / 2,
-        height - 300,
-        (i18next.t('Games played') + ' 860').toUpperCase(),
-        {
-          fontFamily: constants.FONT.FAMILY,
-          fontSize: '72px',
-          color: constants.COLORS.DEFAULT.SPIKE,
-        }
-      )
+      .text(width / 2, height - 300, text, {
+        fontFamily: constants.FONT.FAMILY,
+        fontSize: '72px',
+        color: constants.COLORS.DEFAULT.SPIKE,
+      })
       .setOrigin(0.5, 0.5)
+  }
+
+  private addRoeText() {
+    const { width, height } = this.cameras.main
+
+    const roe = this.localStorageData.get('roe') as number
+
+    this.add.image(width / 2 - 50, height - 500, 'roe', 'roe_1')
+
+    this.roeText = this.add
+      .text(width / 2, height - 500, String(roe), {
+        fontFamily: constants.FONT.FAMILY,
+        fontSize: '72px',
+        color: '#FC4100',
+        align: 'left',
+      })
+      .setOrigin(0, 0.5)
   }
 }
