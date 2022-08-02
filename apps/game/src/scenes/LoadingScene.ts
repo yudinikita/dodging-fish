@@ -69,6 +69,7 @@ export default class LoadingScene extends Phaser.Scene {
   }
 
   private loadResources() {
-    this.load.image('fish_001', 'images/fish_001.png')
+    this.load.image('fish_001', 'sprites/fish_001.png')
+    this.load.image('particle_fish_001', 'sprites/particle_fish_001.png')
   }
 }
