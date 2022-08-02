@@ -8,8 +8,8 @@ export default class Player extends Actor {
     super(scene, x, y, 'fish_001')
 
     this.velocity = {
-      x: 10,
-      y: -14,
+      x: 12,
+      y: -18,
     }
 
     this.setScale(1.3)
@@ -32,6 +32,8 @@ export default class Player extends Actor {
 
   public jump() {
     this.setVelocity(this.velocity.x, this.velocity.y)
+
+    return this
   }
 
   public flip() {
@@ -41,5 +43,21 @@ export default class Player extends Actor {
         : Math.abs(this.velocity.x) * -1
 
     this.setFlipX(!this.flipX)
+
+    return this
+  }
+
+  public addVelocity(x: number, y = 0) {
+    this.velocity.x =
+      Math.sign(this.velocity.x) === -1
+        ? (Math.abs(this.velocity.x) + x) * -1
+        : this.velocity.x + x
+
+    this.velocity.y =
+      Math.sign(this.velocity.y) === -1
+        ? (Math.abs(this.velocity.y) + y) * -1
+        : this.velocity.y + y
+
+    return this
   }
 }
