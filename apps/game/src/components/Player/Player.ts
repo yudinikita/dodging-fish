@@ -8,6 +8,7 @@ const texture = 'fish_001'
 export default class Player extends Actor {
   public stateController: PlayerStateController
   public velocity: { x: number; y: number }
+  public direction: 'left' | 'right' = 'right'
 
   private particlesEmitter!: Phaser.GameObjects.Particles.ParticleEmitter
   private deathSprite?: Phaser.Physics.Matter.Sprite
@@ -59,6 +60,8 @@ export default class Player extends Actor {
   }
 
   public flip() {
+    this.direction = this.direction === 'left' ? 'right' : 'left'
+
     this.velocity.x =
       Math.sign(this.velocity.x) === -1
         ? Math.abs(this.velocity.x)
