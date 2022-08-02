@@ -1,5 +1,11 @@
 # dodging-fish-game
 
+## 0.0.12
+
+### Patch Changes
+
+- d43c2cd: Feat/data manager
+
 ## 0.0.11
 
 ### Patch Changes
