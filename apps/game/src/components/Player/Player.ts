@@ -1,13 +1,19 @@
 import Phaser from 'phaser'
+import constants from '@/constants'
 import Actor from '@/components/Actor'
+import PlayerStateController from '@/components/PlayerStateController'
+
+const texture = 'fish_001'
 
 export default class Player extends Actor {
+  public stateController: PlayerStateController
   public velocity: { x: number; y: number }
 
   private particlesEmitter!: Phaser.GameObjects.Particles.ParticleEmitter
+  private deathSprite?: Phaser.Physics.Matter.Sprite
 
   constructor(scene: Phaser.Scene, x: number, y: number) {
-    super(scene, x, y, 'fish_001')
+    super(scene, x, y, 'fish', 'fish_001')
 
     this.velocity = {
       x: 12,
@@ -32,11 +38,17 @@ export default class Player extends Actor {
     this.setFriction(0, 0, 0)
 
     this.addParticles()
+
+    this.stateController = new PlayerStateController(this)
   }
 
   public jump() {
-    this.particlesEmitter.start()
+    this.stateController.setState('jump')
+    this.scene.time.delayedCall(200, () => {
+      this.stateController.setState('idle')
+    })
 
+    this.particlesEmitter.start()
     this.scene.time.delayedCall(400, () => {
       this.particlesEmitter.stop()
     })
@@ -71,14 +83,57 @@ export default class Player extends Actor {
     return this
   }
 
+  public spawn() {
+    this.setVisible(true)
+    this.setCollisionCategory(Number(true))
+
+    this.velocity.x = Math.abs(this.velocity.x)
+    this.resetFlip()
+    this.setVelocity(0, 0)
+
+    this.setPosition(constants.WIDTH / 2, constants.HEIGHT / 2)
+
+    this.data.values.score = 0
+
+    this.deathSprite?.destroy()
+  }
+
+  public death() {
+    this.setVisible(false)
+    this.setActive(false)
+    this.setCollisionCategory(Number(false))
+    this.particlesEmitter.remove()
+
+    this.addDeathSprite()
+  }
+
+  private addDeathSprite() {
+    this.deathSprite = this.scene.matter.add.sprite(
+      this.x,
+      this.y,
+      'fish_death'
+    )
+
+    this.deathSprite.setBounce(1)
+    this.deathSprite.setFriction(0, 0, 0)
+    this.deathSprite.setVelocity(-this.velocity.x / 2)
+
+    this.scene.tweens.add({
+      targets: this.deathSprite,
+      duration: 1000,
+      angle: 360,
+      repeat: -1,
+    })
+  }
+
   private addParticles() {
-    const particles = this.scene.add.particles('particle_fish_001')
+    const particles = this.scene.add.particles('particle_' + texture)
 
     this.particlesEmitter = particles.createEmitter({
       x: this.x,
       y: this.y,
       lifespan: 400,
-      scale: { start: 0.7, end: 0 },
+      scale: { start: 0.7, end: 0.2 },
       frequency: 90,
       follow: this,
     })

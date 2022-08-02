@@ -135,7 +135,7 @@ export default class SpikeGroup {
 
     // https://photonstorm.github.io/phaser3-docs/Phaser.Physics.Matter.Components.Collision.html
     // @ts-ignore
-    spike.setCollisionCategory(true)
+    spike.setCollisionCategory(Number(true))
 
     return this
   }
@@ -147,7 +147,7 @@ export default class SpikeGroup {
 
       // https://photonstorm.github.io/phaser3-docs/Phaser.Physics.Matter.Components.Collision.html
       // @ts-ignore
-      spike.setCollisionCategory(false)
+      spike.setCollisionCategory(Number(false))
     }
 
     return this

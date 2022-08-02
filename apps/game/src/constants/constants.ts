@@ -1,4 +1,4 @@
-const DEBUG = false
+const DEBUG = true
 
 const SCALE = 1
 

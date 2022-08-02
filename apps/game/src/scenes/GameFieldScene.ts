@@ -266,11 +266,7 @@ export default class GameFieldScene extends Phaser.Scene {
   }
 
   private startGame() {
-    this.player.velocity.x = Math.abs(this.player.velocity.x)
-    this.player.resetFlip()
-    this.player.setVelocity(0, 0)
-    this.player.setPosition(constants.WIDTH / 2, constants.HEIGHT / 2)
-    this.player.data.values.score = 0
+    this.player.spawn()
 
     this.changeColor({ background: 0xeb_eb_eb, spike: 0x80_80_80 })
 
@@ -281,6 +277,8 @@ export default class GameFieldScene extends Phaser.Scene {
   }
 
   private gameOver() {
+    this.player.death()
+
     this.startGame()
 
     this.scene.pause(constants.SCENES.GAME_FIELD)
