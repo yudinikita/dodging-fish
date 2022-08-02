@@ -19,11 +19,23 @@ export default class Roe extends Phaser.Physics.Matter.Image {
   }
 
   public spawn(x: number, y: number) {
+    this.setAlpha(0)
+    this.scene.add.tween({
+      targets: this,
+      duration: 250,
+      alpha: {
+        from: 0,
+        to: 1,
+      },
+      ease: 'Sine.easeInOut',
+      onComplete: () => {
+        this.addAnimation()
+      },
+    })
+
     this.setActive(true)
     this.setVisible(true)
     this.setPosition(x, y)
-
-    this.addAnimation()
   }
 
   public remove() {
