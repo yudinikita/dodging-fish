@@ -1,5 +1,11 @@
 # dodging-fish-game
 
+## 0.0.10
+
+### Patch Changes
+
+- a02ca40: Feat/game over screen
+
 ## 0.0.9
 
 ### Patch Changes
