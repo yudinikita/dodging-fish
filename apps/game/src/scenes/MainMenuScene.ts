@@ -96,7 +96,7 @@ export default class MainMenuScene extends Phaser.Scene {
     const { width, height } = this.cameras.main
 
     const player = this.add
-      .image(width / 2, height / 2, 'fish_001', 0)
+      .image(width / 2, height / 2, 'fish', 'fish_001')
       .setScale(1.3)
 
     this.add.tween({
