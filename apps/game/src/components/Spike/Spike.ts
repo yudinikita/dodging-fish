@@ -6,11 +6,12 @@ export type SpikeConfig = {
   label?: string
   color?: number
   alpha?: number
+  isSensor?: boolean
 }
 
 export default class Spike extends Phaser.GameObjects.Polygon {
   constructor(scene: Phaser.Scene, config: SpikeConfig) {
-    const { x, y, width, height, label, color, alpha } = config
+    const { x, y, width, height, label, color, alpha, isSensor } = config
 
     const trianglePoints = `0 ${height} ${width} ${height} ${width / 2} 0`
 
@@ -21,6 +22,7 @@ export default class Spike extends Phaser.GameObjects.Polygon {
       this,
       {
         isStatic: true,
+        isSensor: true,
         label,
         shape: {
           type: 'fromVerts',

@@ -6,13 +6,23 @@ export type WallConfig = {
   label?: string
   color?: number
   alpha?: number
+  isSensor?: boolean
 }
 
 export default class Wall extends Phaser.GameObjects.Container {
   private readonly rect: Phaser.GameObjects.Rectangle
 
   constructor(scene: Phaser.Scene, config: WallConfig) {
-    const { x, y, width, height, label, color, alpha } = config
+    const {
+      x,
+      y,
+      width,
+      height,
+      label,
+      color,
+      alpha,
+      isSensor = false,
+    } = config
 
     super(scene, x, y)
     scene.add.existing(this)
@@ -24,6 +34,7 @@ export default class Wall extends Phaser.GameObjects.Container {
 
     scene.matter.add.gameObject(this, {
       isStatic: true,
+      isSensor,
       label: label,
     })
   }
