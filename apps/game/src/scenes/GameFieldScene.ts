@@ -85,20 +85,22 @@ export default class GameFieldScene extends Phaser.Scene {
     const { width, height } = this.cameras.main
 
     this.wallLeft = new Wall(this, {
-      x: 10,
+      x: 5,
       y: height / 2,
-      width: 4,
+      width: 50,
       height,
       label: 'wallLeft',
       alpha: 0,
+      isSensor: true,
     })
     this.wallRight = new Wall(this, {
-      x: width - 10,
+      x: width - 5,
       y: height / 2,
-      width: 6,
+      width: 50,
       height,
       label: 'wallRight',
       alpha: 0,
+      isSensor: true,
     })
 
     const wallHeight = constants.WALL.HEIGHT
