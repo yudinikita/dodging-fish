@@ -1,5 +1,11 @@
 # dodging-fish-game
 
+## 0.0.8
+
+### Patch Changes
+
+- 0607ea3: Feat/change speed
+
 ## 0.0.7
 
 ### Patch Changes
