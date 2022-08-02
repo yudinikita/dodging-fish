@@ -1,6 +1,7 @@
 import Phaser from 'phaser'
 import constants from '@/constants'
 import SceneList from '@/config/sceneList'
+import plugins from '@/config/pluginsConfig'
 
 const gameConfig: Phaser.Types.Core.GameConfig = {
   title: 'Dont Touch',
@@ -32,6 +33,7 @@ const gameConfig: Phaser.Types.Core.GameConfig = {
   },
   autoFocus: true,
   scene: SceneList,
+  plugins,
 }
 
 export default gameConfig

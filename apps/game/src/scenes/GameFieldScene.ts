@@ -216,6 +216,7 @@ export default class GameFieldScene extends Phaser.Scene {
             this.gameOver()
           } else if ([bodyA.label, bodyB.label].includes('roe')) {
             this.player.data.values.roe += this.roe?.getValue || 0
+            this.roe?.showTakenValue()
             this.roe?.remove()
             this.roe = null
           }
@@ -315,6 +316,7 @@ export default class GameFieldScene extends Phaser.Scene {
 
     this.scene.run(constants.SCENES.GAME_OVER, {
       score: this.player.data.values.score,
+      roe: this.player.data.values.roe,
     })
   }
 }

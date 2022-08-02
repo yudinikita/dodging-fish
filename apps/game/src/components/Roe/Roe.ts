@@ -1,3 +1,5 @@
+import constants from '@/constants'
+
 export default class Roe extends Phaser.Physics.Matter.Image {
   private value = 0
   private tween?: Phaser.Tweens.Tween
@@ -19,16 +21,44 @@ export default class Roe extends Phaser.Physics.Matter.Image {
   }
 
   public spawn(x: number, y: number) {
+    this.setAlpha(0)
+    this.scene.add.tween({
+      targets: this,
+      duration: 250,
+      alpha: {
+        from: 0,
+        to: 1,
+      },
+      ease: 'Sine.easeInOut',
+      onComplete: () => {
+        this.addAnimation()
+      },
+    })
+
     this.setActive(true)
     this.setVisible(true)
     this.setPosition(x, y)
-
-    this.addAnimation()
   }
 
   public remove() {
     this.tween?.remove()
     this.destroy(true)
+  }
+
+  public showTakenValue() {
+    this.scene.floatingNumbers.createFloatingText({
+      textOptions: {
+        fontFamily: constants.FONT.FAMILY,
+        fontSize: '72px',
+        color: '#FC4100',
+      },
+      align: 'top-center',
+      animation: 'up',
+      animationEase: 'Sine.easeInOut',
+      text: '+' + this.value,
+      offsetY: this.height,
+      parentObject: this,
+    })
   }
 
   private addAnimation() {
