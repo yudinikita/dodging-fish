@@ -1,0 +1,124 @@
+{
+	"textures": [
+		{
+			"image": "roe",
+			"format": "RGBA8888",
+			"size": {
+				"w": 72,
+				"h": 360
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "roe_1",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 4,
+						"y": 4,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "roe_2",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 4,
+						"y": 76,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "roe_3",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 4,
+						"y": 148,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "roe_4",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 4,
+						"y": 220,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "roe_5",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 4,
+						"y": 292,
+						"w": 64,
+						"h": 64
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "http://free-tex-packer.com",
+		"version": "0.6.7"
+	}
+}
