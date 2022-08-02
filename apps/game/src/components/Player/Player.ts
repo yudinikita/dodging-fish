@@ -4,6 +4,8 @@ import Actor from '@/components/Actor'
 export default class Player extends Actor {
   public velocity: { x: number; y: number }
 
+  private particlesEmitter!: Phaser.GameObjects.Particles.ParticleEmitter
+
   constructor(scene: Phaser.Scene, x: number, y: number) {
     super(scene, x, y, 'fish_001')
 
@@ -28,9 +30,17 @@ export default class Player extends Actor {
 
     this.setBounce(1)
     this.setFriction(0, 0, 0)
+
+    this.addParticles()
   }
 
   public jump() {
+    this.particlesEmitter.start()
+
+    this.scene.time.delayedCall(400, () => {
+      this.particlesEmitter.stop()
+    })
+
     this.setVelocity(this.velocity.x, this.velocity.y)
 
     return this
@@ -59,5 +69,18 @@ export default class Player extends Actor {
         : this.velocity.y + y
 
     return this
+  }
+
+  private addParticles() {
+    const particles = this.scene.add.particles('particle_fish_001')
+
+    this.particlesEmitter = particles.createEmitter({
+      x: this.x,
+      y: this.y,
+      lifespan: 400,
+      scale: { start: 0.7, end: 0 },
+      frequency: 90,
+      follow: this,
+    })
   }
 }
