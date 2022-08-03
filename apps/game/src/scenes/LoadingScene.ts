@@ -27,17 +27,17 @@ export default class LoadingScene extends Phaser.Scene {
     this.circularProgress = new CircularProgressCanvas(this, {
       x: width / 2,
       y: height / 2,
-      radius: 50,
+      radius: 150,
 
-      trackColor: '#2442A4',
-      barColor: '#fff',
+      trackColor: '#004F79',
+      barColor: '#2BAFF6',
 
-      textSize: '26px',
+      textSize: '86px',
       textStyle: 'bold',
       textFormatCallback: function (value) {
         return (100 - Math.floor(value * 100)).toString()
       },
-      textColor: constants.FONT.COLOR,
+      textColor: '#004F79',
       textFamily: constants.FONT.FAMILY,
 
       valuechangeCallback(
