@@ -24,6 +24,8 @@ const constants = {
     GAME_FIELD: 'game-field-scene',
     GAME_OVER: 'game-over-scene',
     GAME_INFO_UI: 'game-info-ui-scene',
+    PLAYER_SKINS: 'player-skins-scene',
+    LOCAL_STORAGE: 'local-storage-scene',
   },
   SPIKE: {
     WIDTH: 145,
@@ -34,6 +36,7 @@ const constants = {
   },
   COLORS: {
     ACCENT: '#2BAFF6',
+    ACCENT_VARIANT: '#004F79',
     DEFAULT: {
       BACKGROUND: '#EBEBEB',
       SPIKE: '#808080',
