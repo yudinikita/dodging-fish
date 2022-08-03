@@ -1,5 +1,11 @@
 # dodging-fish-game
 
+## 0.0.13
+
+### Patch Changes
+
+- 178f5d0: Feat/change skins
+
 ## 0.0.12
 
 ### Patch Changes
