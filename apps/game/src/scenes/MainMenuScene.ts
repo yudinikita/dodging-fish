@@ -1,5 +1,8 @@
 import i18next from 'i18next'
+import { Buttons } from 'phaser3-rex-plugins/templates/ui/ui-components'
+import LocalStorageData from 'phaser3-rex-plugins/plugins/localstorage-data'
 import constants from '@/constants'
+import Button from '@/components/Button'
 
 export default class MainMenuScene extends Phaser.Scene {
   private playPanel!: Phaser.GameObjects.Rectangle
@@ -14,12 +17,17 @@ export default class MainMenuScene extends Phaser.Scene {
     this.addPlayerSkin()
     this.addInfoUi()
 
+    this.addPlayPanel()
     this.startGameEvent()
+
     this.addResumeEvent()
+    this.addChangeSkinEvent()
+
+    this.addButtonUi()
   }
 
   private startGameEvent() {
-    this.input.on(
+    this.playPanel.on(
       'pointerdown',
       () => {
         this.scene.pause()
@@ -86,5 +94,89 @@ export default class MainMenuScene extends Phaser.Scene {
       yoyo: true,
       ease: 'Sine.easeInOut',
     })
+  }
+
+  private addPlayPanel() {
+    const { centerX, centerY } = this.cameras.main
+    this.playPanel = this.add
+      .rectangle(centerX, centerY, 600, 800, 0x00_00_00, 0)
+      .setOrigin(0.5, 0.5)
+      .setInteractive()
+  }
+
+  private addButtonUi() {
+    const defaultStyle = {
+      texture: 'ui',
+      backgroundColor: 0x2b_af_f6,
+      backgroundColorOver: 0x00_4f_79,
+    }
+
+    const skinsButton = new Button(this, {
+      frameIcon: 'fish',
+      ...defaultStyle,
+    })
+    const shopButton = new Button(this, {
+      frameIcon: 'gift',
+      ...defaultStyle,
+    })
+    const settingsButton = new Button(this, {
+      frameIcon: 'settings',
+      ...defaultStyle,
+    })
+
+    const buttons = new Buttons(this, {
+      x: 200,
+      y: 200,
+      anchor: {
+        centerX: 'right-125',
+        centerY: 'center',
+      },
+      orientation: 'vertical',
+      buttons: [skinsButton, shopButton, settingsButton],
+      space: {
+        item: 50,
+      },
+    }).layout()
+    this.add.existing(buttons)
+
+    buttons.on(
+      'button.over',
+      (button: Button) => {
+        button.setOver()
+      },
+      this
+    )
+
+    buttons.on(
+      'button.out',
+      (button: Button) => {
+        button.setDefaultStyle()
+      },
+      this
+    )
+
+    buttons.on(
+      'button.click',
+      (button: Button, index: number) => {
+        switch (index) {
+          case 0:
+            this.scene.launch(constants.SCENES.PLAYER_SKINS)
+        }
+      },
+      this
+    )
+  }
+
+  private addChangeSkinEvent() {
+    const localStorageScene = this.scene.get(constants.SCENES.LOCAL_STORAGE)
+    const localStorageData = localStorageScene.data.get(
+      'localStorageData'
+    ) as LocalStorageData
+    localStorageData.events.on(
+      'changedata-selectFish',
+      (_: any, selectSkin: string) => {
+        this.playerSkin.setFrame(selectSkin)
+      }
+    )
   }
 }
