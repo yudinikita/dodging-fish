@@ -1,0 +1,145 @@
+{
+	"textures": [
+		{
+			"image": "ui",
+			"format": "RGBA8888",
+			"size": {
+				"w": 232,
+				"h": 215
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "back",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 72,
+						"h": 72
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 14,
+						"w": 72,
+						"h": 47
+					},
+					"frame": {
+						"x": 4,
+						"y": 4,
+						"w": 72,
+						"h": 47
+					}
+				},
+				{
+					"filename": "gift",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 72,
+						"h": 72
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 72,
+						"h": 72
+					},
+					"frame": {
+						"x": 4,
+						"y": 59,
+						"w": 72,
+						"h": 72
+					}
+				},
+				{
+					"filename": "like",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 72,
+						"h": 72
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 0,
+						"w": 68,
+						"h": 72
+					},
+					"frame": {
+						"x": 84,
+						"y": 4,
+						"w": 68,
+						"h": 72
+					}
+				},
+				{
+					"filename": "ok",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 72,
+						"h": 72
+					},
+					"spriteSourceSize": {
+						"x": 9,
+						"y": 0,
+						"w": 55,
+						"h": 72
+					},
+					"frame": {
+						"x": 4,
+						"y": 139,
+						"w": 55,
+						"h": 72
+					}
+				},
+				{
+					"filename": "settings",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 72,
+						"h": 72
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 72,
+						"h": 72
+					},
+					"frame": {
+						"x": 67,
+						"y": 139,
+						"w": 72,
+						"h": 72
+					}
+				},
+				{
+					"filename": "fish",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 72,
+						"h": 72
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 10,
+						"w": 68,
+						"h": 52
+					},
+					"frame": {
+						"x": 160,
+						"y": 4,
+						"w": 68,
+						"h": 52
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "http://free-tex-packer.com",
+		"version": "0.6.7"
+	}
+}

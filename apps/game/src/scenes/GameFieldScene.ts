@@ -1,4 +1,5 @@
 import Phaser from 'phaser'
+import LocalStorageData from 'phaser3-rex-plugins/plugins/localstorage-data'
 import constants from '@/constants'
 import Player from '@/components/Player'
 import Wall from '@/components/Wall'
@@ -28,15 +29,13 @@ export default class GameFieldScene extends Phaser.Scene {
   }
 
   create() {
-    const { width, height, centerX, centerY } = this.cameras.main
+    const { width, height } = this.cameras.main
 
     this.matter.world.setBounds(0, 0, width, height)
 
     this.addScoreText()
 
-    this.player = new Player(this, centerX, centerY)
-    this.initPlayerData()
-    this.addPlayerController()
+    this.addPlayer()
 
     this.scoreText.setText(this.player.data.get('score'))
 
@@ -44,8 +43,37 @@ export default class GameFieldScene extends Phaser.Scene {
     this.addSpikes()
     this.addCollisionStartEvent()
     this.addPauseEvent()
+    this.addChangeSkinEvent()
 
     this.startGame()
+  }
+
+  private addPlayer() {
+    const { centerX, centerY } = this.cameras.main
+
+    const localStorageScene = this.scene.get(constants.SCENES.LOCAL_STORAGE)
+    const localStorageData = localStorageScene.data.get(
+      'localStorageData'
+    ) as LocalStorageData
+    const playerFrameName = localStorageData.get('selectFish')
+
+    this.player = new Player(this, centerX, centerY, playerFrameName)
+    this.initPlayerData()
+    this.addPlayerController()
+  }
+
+  private addChangeSkinEvent() {
+    const localStorageScene = this.scene.get(constants.SCENES.LOCAL_STORAGE)
+    const localStorageData = localStorageScene.data.get(
+      'localStorageData'
+    ) as LocalStorageData
+
+    localStorageData.events.on(
+      'changedata-selectFish',
+      (_: any, selectSkin: string) => {
+        this.player.changeSkin(selectSkin)
+      }
+    )
   }
 
   private initPlayerData() {

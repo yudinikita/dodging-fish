@@ -42,7 +42,9 @@ export default class Roe extends Phaser.Physics.Matter.Image {
 
   public remove() {
     this.tween?.remove()
-    this.destroy(true)
+    this.setVisible(false)
+    this.setActive(false)
+    this.setCollisionCategory(Number(false))
   }
 
   public showTakenValue() {
