@@ -80,5 +80,7 @@ export default class LoadingScene extends Phaser.Scene {
     this.load.image('particle_fish_001', 'sprites/particle_fish_001.png')
 
     this.load.atlas('roe', 'spritesheets/roe.png', 'spritesheets/roe.json')
+
+    this.load.atlas('ui', 'spritesheets/ui.png', 'spritesheets/ui.json')
   }
 }
