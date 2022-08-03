@@ -75,7 +75,7 @@ export default class GameOverScene extends Phaser.Scene {
       700,
       700,
       {
-        radius: 75,
+        radius: 160,
       },
       constants.COLORS.ACCENT
     )
@@ -86,7 +86,7 @@ export default class GameOverScene extends Phaser.Scene {
     const { centerX, centerY } = this.cameras.main
 
     this.add
-      .text(centerX, centerY - 200, i18next.t('Score'), {
+      .text(centerX, centerY - 125, i18next.t('Score'), {
         fontSize: '52px',
         fontFamily: constants.FONT.FAMILY,
         align: 'center',
@@ -94,7 +94,7 @@ export default class GameOverScene extends Phaser.Scene {
       .setOrigin(0.5, 0.5)
 
     this.add
-      .text(centerX, centerY, String(this.score || 0), {
+      .text(centerX, centerY + 50, String(this.score || 0), {
         fontSize: '300px',
         fontFamily: constants.FONT.FAMILY,
         align: 'center',
