@@ -1,0 +1,2623 @@
+{
+	"textures": [
+		{
+			"image": "particle",
+			"format": "RGBA8888",
+			"size": {
+				"w": 864,
+				"h": 792
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "particle_fish_36",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 4,
+						"y": 4,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_01",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 76,
+						"y": 4,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_03",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 4,
+						"y": 76,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_04",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 76,
+						"y": 76,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_05",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 148,
+						"y": 4,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_06",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 148,
+						"y": 76,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_07",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 4,
+						"y": 148,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_08",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 76,
+						"y": 148,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_09",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 148,
+						"y": 148,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_10",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 220,
+						"y": 4,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_100",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 220,
+						"y": 76,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_101",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 220,
+						"y": 148,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_102",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 4,
+						"y": 220,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_103",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 76,
+						"y": 220,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_104",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 148,
+						"y": 220,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_105",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 220,
+						"y": 220,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_106",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 292,
+						"y": 4,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_107",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 292,
+						"y": 76,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_108",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 292,
+						"y": 148,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_109",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 292,
+						"y": 220,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_11",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 4,
+						"y": 292,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_110",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 76,
+						"y": 292,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_111",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 148,
+						"y": 292,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_112",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 220,
+						"y": 292,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_113",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 292,
+						"y": 292,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_114",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 364,
+						"y": 4,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_115",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 364,
+						"y": 76,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_116",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 364,
+						"y": 148,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_117",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 364,
+						"y": 220,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_118",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 364,
+						"y": 292,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_119",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 4,
+						"y": 364,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_12",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 76,
+						"y": 364,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_120",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 148,
+						"y": 364,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_121",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 220,
+						"y": 364,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_122",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 292,
+						"y": 364,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_123",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 364,
+						"y": 364,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_124",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 436,
+						"y": 4,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_125",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 436,
+						"y": 76,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_126",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 436,
+						"y": 148,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_13",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 436,
+						"y": 220,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_14",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 436,
+						"y": 292,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_15",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 436,
+						"y": 364,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_16",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 4,
+						"y": 436,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_17",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 76,
+						"y": 436,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_18",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 148,
+						"y": 436,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_19",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 220,
+						"y": 436,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_20",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 292,
+						"y": 436,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_21",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 364,
+						"y": 436,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_22",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 436,
+						"y": 436,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_23",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 508,
+						"y": 4,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_24",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 508,
+						"y": 76,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_25",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 508,
+						"y": 148,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_26",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 508,
+						"y": 220,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_27",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 508,
+						"y": 292,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_28",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 508,
+						"y": 364,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_29",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 508,
+						"y": 436,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_30",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 4,
+						"y": 508,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_31",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 76,
+						"y": 508,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_32",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 148,
+						"y": 508,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_33",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 220,
+						"y": 508,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_34",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 292,
+						"y": 508,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_35",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 364,
+						"y": 508,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_02",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 436,
+						"y": 508,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_37",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 508,
+						"y": 508,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_38",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 580,
+						"y": 4,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_39",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 580,
+						"y": 76,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_40",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 580,
+						"y": 148,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_41",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 580,
+						"y": 220,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_42",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 580,
+						"y": 292,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_43",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 580,
+						"y": 364,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_44",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 580,
+						"y": 436,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_45",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 580,
+						"y": 508,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_46",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 4,
+						"y": 580,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_47",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 76,
+						"y": 580,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_48",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 148,
+						"y": 580,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_49",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 220,
+						"y": 580,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_50",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 292,
+						"y": 580,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_51",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 364,
+						"y": 580,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_52",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 436,
+						"y": 580,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_53",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 508,
+						"y": 580,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_54",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 580,
+						"y": 580,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_55",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 652,
+						"y": 4,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_56",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 652,
+						"y": 76,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_57",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 652,
+						"y": 148,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_58",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 652,
+						"y": 220,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_59",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 652,
+						"y": 292,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_60",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 652,
+						"y": 364,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_61",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 652,
+						"y": 436,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_62",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 652,
+						"y": 508,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_63",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 652,
+						"y": 580,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_64",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 4,
+						"y": 652,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_65",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 76,
+						"y": 652,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_66",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 148,
+						"y": 652,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_67",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 220,
+						"y": 652,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_68",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 292,
+						"y": 652,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_69",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 364,
+						"y": 652,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_70",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 436,
+						"y": 652,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_71",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 508,
+						"y": 652,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_72",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 580,
+						"y": 652,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_73",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 652,
+						"y": 652,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_74",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 724,
+						"y": 4,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_75",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 724,
+						"y": 76,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_76",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 724,
+						"y": 148,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_77",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 724,
+						"y": 220,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_78",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 724,
+						"y": 292,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_79",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 724,
+						"y": 364,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_80",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 724,
+						"y": 436,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_81",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 724,
+						"y": 508,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_82",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 724,
+						"y": 580,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_83",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 724,
+						"y": 652,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_85",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 4,
+						"y": 724,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_86",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 76,
+						"y": 724,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_87",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 148,
+						"y": 724,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_88",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 220,
+						"y": 724,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_89",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 292,
+						"y": 724,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_90",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 364,
+						"y": 724,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_92",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 436,
+						"y": 724,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_93",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 508,
+						"y": 724,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_94",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 580,
+						"y": 724,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_95",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 652,
+						"y": 724,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_96",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 724,
+						"y": 724,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_97",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 796,
+						"y": 4,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_98",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 796,
+						"y": 76,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "particle_fish_99",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 796,
+						"y": 148,
+						"w": 64,
+						"h": 64
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "http://free-tex-packer.com",
+		"version": "0.6.7"
+	}
+}
