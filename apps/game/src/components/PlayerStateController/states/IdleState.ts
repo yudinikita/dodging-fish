@@ -8,6 +8,9 @@ export default class IdleState {
   }
 
   enter() {
-    !this.player.anims.isPlaying && this.player.setFrame('fish_001')
+    const frameName = this.player.frameName
+    const jumpFrame = frameName.slice(0, -1) + 'a'
+
+    this.player.setFrame(jumpFrame)
   }
 }

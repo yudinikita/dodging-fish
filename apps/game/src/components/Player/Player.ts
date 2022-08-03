@@ -3,18 +3,19 @@ import constants from '@/constants'
 import Actor from '@/components/Actor'
 import PlayerStateController from '@/components/PlayerStateController'
 
-const texture = 'fish_001'
-
 export default class Player extends Actor {
   public stateController: PlayerStateController
   public velocity: { x: number; y: number }
   public direction: 'left' | 'right' = 'right'
+  public frameName: string
 
   private particlesEmitter!: Phaser.GameObjects.Particles.ParticleEmitter
   private deathSprite?: Phaser.Physics.Matter.Sprite
 
-  constructor(scene: Phaser.Scene, x: number, y: number) {
-    super(scene, x, y, 'fish', 'fish_001')
+  constructor(scene: Phaser.Scene, x: number, y: number, frameName: string) {
+    super(scene, x, y, 'fish', frameName)
+
+    this.frameName = frameName
 
     this.velocity = {
       x: 12,
@@ -110,6 +111,11 @@ export default class Player extends Actor {
     this.addDeathSprite()
   }
 
+  public changeSkin(newSkin: string) {
+    this.frameName = newSkin
+    this.particlesEmitter.setFrame('particle_' + newSkin.slice(0, -1))
+  }
+
   private addDeathSprite() {
     this.deathSprite = this.scene.matter.add.sprite(
       this.x,
@@ -130,7 +136,10 @@ export default class Player extends Actor {
   }
 
   private addParticles() {
-    const particles = this.scene.add.particles('particle_' + texture)
+    const particles = this.scene.add.particles(
+      'particle',
+      'particle_' + this.frameName.slice(0, -1)
+    )
 
     this.particlesEmitter = particles.createEmitter({
       x: this.x,
