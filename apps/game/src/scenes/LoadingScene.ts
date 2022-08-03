@@ -71,18 +71,18 @@ export default class LoadingScene extends Phaser.Scene {
   }
 
   private loadResources() {
-    this.load.image('fish_death', 'sprites/fish_death.png')
+    this.load.atlas('ui', 'spritesheets/ui.png', 'spritesheets/ui.json')
+
+    this.load.atlas('fish', 'spritesheets/fish.png', 'spritesheets/fish.json')
 
     this.load.atlas(
-      'fish',
-      'spritesheets/fishes.png',
-      'spritesheets/fishes.json'
+      'particle',
+      'spritesheets/particle.png',
+      'spritesheets/particle.json'
     )
-
-    this.load.image('particle_fish_001', 'sprites/particle_fish_001.png')
 
     this.load.atlas('roe', 'spritesheets/roe.png', 'spritesheets/roe.json')
 
-    this.load.atlas('ui', 'spritesheets/ui.png', 'spritesheets/ui.json')
+    this.load.image('fish_death', 'sprites/fish_death.png')
   }
 }
