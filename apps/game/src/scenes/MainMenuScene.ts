@@ -2,6 +2,9 @@ import i18next from 'i18next'
 import constants from '@/constants'
 
 export default class MainMenuScene extends Phaser.Scene {
+  private playPanel!: Phaser.GameObjects.Rectangle
+  private playerSkin!: Phaser.GameObjects.Image
+
   constructor() {
     super(constants.SCENES.MAIN_MENU)
   }
@@ -65,12 +68,18 @@ export default class MainMenuScene extends Phaser.Scene {
   private addPlayerSkin() {
     const { width, height } = this.cameras.main
 
-    const player = this.add
-      .image(width / 2, height / 2, 'fish', 'fish_001')
+    const localStorageScene = this.scene.get(constants.SCENES.LOCAL_STORAGE)
+    const localStorageData = localStorageScene.data.get(
+      'localStorageData'
+    ) as LocalStorageData
+    const selectFish = localStorageData.get('selectFish') as string
+
+    this.playerSkin = this.add
+      .image(width / 2, height / 2, 'fish', selectFish)
       .setScale(1.3)
 
     this.add.tween({
-      targets: player,
+      targets: this.playerSkin,
       y: height / 2 + 70,
       duration: 700,
       repeat: -1,

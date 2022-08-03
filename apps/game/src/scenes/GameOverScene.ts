@@ -38,8 +38,8 @@ export default class GameOverScene extends Phaser.Scene {
   }
 
   private addBestScoreValue() {
-    const gameInfoUiScene = this.scene.get(constants.SCENES.GAME_INFO_UI)
-    const localStorageData = gameInfoUiScene.data.get(
+    const localStorageScene = this.scene.get(constants.SCENES.LOCAL_STORAGE)
+    const localStorageData = localStorageScene.data.get(
       'localStorageData'
     ) as LocalStorageData
 
@@ -50,16 +50,16 @@ export default class GameOverScene extends Phaser.Scene {
   }
 
   private incGamesPlayedValue() {
-    const gameInfoUiScene = this.scene.get(constants.SCENES.GAME_INFO_UI)
-    const localStorageData = gameInfoUiScene.data.get(
+    const localStorageScene = this.scene.get(constants.SCENES.LOCAL_STORAGE)
+    const localStorageData = localStorageScene.data.get(
       'localStorageData'
     ) as LocalStorageData
     localStorageData.inc('gamesPlayed', 1)
   }
 
   private incRoeValue() {
-    const gameInfoUiScene = this.scene.get(constants.SCENES.GAME_INFO_UI)
-    const localStorageData = gameInfoUiScene.data.get(
+    const localStorageScene = this.scene.get(constants.SCENES.LOCAL_STORAGE)
+    const localStorageData = localStorageScene.data.get(
       'localStorageData'
     ) as LocalStorageData
     localStorageData.inc('roe', this.roe)

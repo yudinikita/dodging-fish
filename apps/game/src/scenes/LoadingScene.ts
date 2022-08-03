@@ -61,10 +61,12 @@ export default class LoadingScene extends Phaser.Scene {
 
       this.scene.stop(constants.SCENES.LOADING)
 
-      this.scene.start(constants.SCENES.GAME_FIELD)
+      this.scene.launch(constants.SCENES.LOCAL_STORAGE)
+
+      this.scene.launch(constants.SCENES.GAME_FIELD)
       this.scene.pause(constants.SCENES.GAME_FIELD)
 
-      this.scene.start(constants.SCENES.MAIN_MENU)
+      this.scene.launch(constants.SCENES.MAIN_MENU)
     })
   }
 

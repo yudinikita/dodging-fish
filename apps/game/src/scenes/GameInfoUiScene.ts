@@ -38,16 +38,10 @@ export default class GameInfoUiScene extends Phaser.Scene {
   }
 
   private addLocalStorageData() {
-    this.localStorageData = new LocalStorageData(this, {
-      name: constants.SCENES.GAME_INFO_UI,
-      default: {
-        bestScore: 0,
-        gamesPlayed: 0,
-        roe: 0,
-      },
-    })
-
-    this.data.set('localStorageData', this.localStorageData)
+    const gameInfoUiScene = this.scene.get(constants.SCENES.LOCAL_STORAGE)
+    this.localStorageData = gameInfoUiScene.data.get(
+      'localStorageData'
+    ) as LocalStorageData
   }
 
   private addLocalStorageEvents() {
