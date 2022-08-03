@@ -42,6 +42,10 @@ const constants = {
       SPIKE: '#808080',
     },
   },
+  FISH: {
+    COUNT: 126,
+    BUY_COST: 1000,
+  },
 }
 
 export default constants
