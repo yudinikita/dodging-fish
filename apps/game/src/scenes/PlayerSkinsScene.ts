@@ -2,11 +2,13 @@ import Phaser from 'phaser'
 import Anchor from 'phaser3-rex-plugins/plugins/behaviors/anchor/Anchor'
 import { Buttons } from 'phaser3-rex-plugins/templates/ui/ui-components'
 import LocalStorageData from 'phaser3-rex-plugins/plugins/localstorage-data'
+import i18next from 'i18next'
 import type { SkinType } from '@/components/SkinSelectPanel/SkinSelectPanel'
 import constants from '@/constants'
 import Button from '@/components/Button'
 import SkinSelectPanel from '@/components/SkinSelectPanel'
 import DialogBuy from '@/components/DialogBuy'
+import Toast from '@/components/Toast'
 
 export default class PlayerSkinsScene extends Phaser.Scene {
   private skins: SkinType[] = []
@@ -57,7 +59,7 @@ export default class PlayerSkinsScene extends Phaser.Scene {
               dialog.closeModal()
             } else if (
               button.frame.name === 'like' &&
-              localStorageData.get('roe') > constants.FISH.BUY_COST
+              localStorageData.get('roe') >= constants.FISH.BUY_COST
             ) {
               localStorageData.set('selectFish', selectItem.frame.name)
               localStorageData.set('fishes', [...fishes, selectItem.frame.name])
@@ -68,6 +70,13 @@ export default class PlayerSkinsScene extends Phaser.Scene {
               localStorageData.inc('roe', constants.FISH.BUY_COST * -1)
 
               dialog.closeModal()
+            } else if (
+              button.frame.name === 'like' &&
+              localStorageData.get('roe') < constants.FISH.BUY_COST
+            ) {
+              const lacks =
+                constants.FISH.BUY_COST - localStorageData.get('roe')
+              new Toast(this).showMessage(i18next.t('Missing') + ' ' + lacks)
             }
           })
 
@@ -119,7 +128,9 @@ export default class PlayerSkinsScene extends Phaser.Scene {
     localStorageData.events.on(
       'changedata-fishes',
       (_: any, fishes: string[]) => {
-        this.countText.setText(`${fishes.length}/${constants.FISH.COUNT}`)
+        if (this.countText) {
+          this.countText.setText(`${fishes.length}/${constants.FISH.COUNT}`)
+        }
       },
       this
     )
@@ -134,13 +145,13 @@ export default class PlayerSkinsScene extends Phaser.Scene {
         fontSize: '126px',
         fontFamily: constants.FONT.FAMILY,
         color: '#ffffff',
-        align: 'left',
+        align: 'right',
       })
-      .setOrigin(1, 0)
+      .setOrigin(1, 0.5)
 
     new Anchor(this.countText, {
       x: 'right-50',
-      y: 'top+100',
+      y: 'top+180',
     })
   }
 
