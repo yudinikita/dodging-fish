@@ -1,5 +1,11 @@
 # dodging-fish-game
 
+## 0.0.15
+
+### Patch Changes
+
+- 787f5cd: Feat/settings
+
 ## 0.0.14
 
 ### Patch Changes
