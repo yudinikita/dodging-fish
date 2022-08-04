@@ -27,6 +27,7 @@ const constants = {
     PLAYER_SKINS: 'player-skins-scene',
     LOCAL_STORAGE: 'local-storage-scene',
     SHOP: 'shop-scene',
+    SETTINGS: 'settings-scene',
   },
   SPIKE: {
     WIDTH: 145,
