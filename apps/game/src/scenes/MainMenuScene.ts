@@ -165,6 +165,9 @@ export default class MainMenuScene extends Phaser.Scene {
           case 1:
             this.scene.launch(constants.SCENES.SHOP)
             break
+          case 2:
+            this.scene.launch(constants.SCENES.SETTINGS)
+            break
         }
       },
       this

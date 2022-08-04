@@ -35,7 +35,7 @@ export default class ShopScene extends Phaser.Scene {
 
   private addTitle() {
     const title = this.add
-      .text(0, 0, 'Магазин', {
+      .text(0, 0, i18next.t('Shop'), {
         fontSize: '126px',
         fontFamily: constants.FONT.FAMILY,
         color: '#ffffff',
