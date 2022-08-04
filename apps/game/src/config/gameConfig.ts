@@ -5,7 +5,7 @@ import plugins from '@/config/pluginsConfig'
 
 const gameConfig: Phaser.Types.Core.GameConfig = {
   title: 'Dont Touch',
-  version: '0.0.4',
+  version: '0.0.15',
   type: Phaser.AUTO,
   parent: 'game-container',
   backgroundColor: constants.COLORS.DEFAULT.BACKGROUND,
