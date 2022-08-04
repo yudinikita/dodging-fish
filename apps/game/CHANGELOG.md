@@ -1,5 +1,11 @@
 # dodging-fish-game
 
+## 0.0.14
+
+### Patch Changes
+
+- bb4b11b: Feat/loot box
+
 ## 0.0.13
 
 ### Patch Changes
