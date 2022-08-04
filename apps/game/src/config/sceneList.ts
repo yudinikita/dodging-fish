@@ -6,6 +6,7 @@ import GameInfoUiScene from '@/scenes/GameInfoUiScene'
 import GameOverScene from '@/scenes/GameOverScene'
 import PlayerSkinsScene from '@/scenes/PlayerSkinsScene'
 import ShopScene from '@/scenes/ShopScene'
+import SettingsScene from '@/scenes/SettingsScene'
 
 const SceneList = [
   LoadingScene,
@@ -16,6 +17,7 @@ const SceneList = [
   GameOverScene,
   PlayerSkinsScene,
   ShopScene,
+  SettingsScene,
 ]
 
 export default SceneList
