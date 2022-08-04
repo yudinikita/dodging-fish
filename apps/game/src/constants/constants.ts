@@ -26,6 +26,7 @@ const constants = {
     GAME_INFO_UI: 'game-info-ui-scene',
     PLAYER_SKINS: 'player-skins-scene',
     LOCAL_STORAGE: 'local-storage-scene',
+    SHOP: 'shop-scene',
   },
   SPIKE: {
     WIDTH: 145,
@@ -45,6 +46,7 @@ const constants = {
   FISH: {
     COUNT: 126,
     BUY_COST: 1000,
+    GIFT_COST: 500,
   },
 }
 
