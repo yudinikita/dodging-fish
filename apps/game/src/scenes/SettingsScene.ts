@@ -5,7 +5,6 @@ import { DropDownList } from 'phaser3-rex-plugins/templates/ui/ui-components'
 import RoundRectangle from 'phaser3-rex-plugins/plugins/roundrectangle.js'
 import { NumberBar } from 'phaser3-rex-plugins/templates/ui/ui-components'
 import InputText from 'phaser3-rex-plugins/plugins/hiddeninputtext'
-import BBCodeText from 'phaser3-rex-plugins/plugins/bbcodetext'
 import LocalStorageData from 'phaser3-rex-plugins/plugins/localstorage-data'
 import constants from '@/constants'
 import Button from '@/components/Button'
@@ -364,6 +363,59 @@ export default class SettingsScene extends Phaser.Scene {
           ) as LocalStorageData
 
           localStorageData.set('roe', 50_000)
+
+          inputText.setText('Code:')
+
+          break
+        }
+        case 'Code:0000': {
+          this.game.sound.playAudioSprite('sfx', 'victory')
+
+          const localStorageScene = this.scene.get(
+            constants.SCENES.LOCAL_STORAGE
+          )
+          const localStorageData = localStorageScene.data.get(
+            'localStorageData'
+          ) as LocalStorageData
+
+          localStorageData.reset()
+
+          inputText.setText('Code:')
+
+          break
+        }
+        case 'Code:0001': {
+          this.game.sound.playAudioSprite('sfx', 'victory')
+
+          const localStorageScene = this.scene.get(
+            constants.SCENES.LOCAL_STORAGE
+          )
+          const localStorageData = localStorageScene.data.get(
+            'localStorageData'
+          ) as LocalStorageData
+
+          localStorageData.set('roe', 0)
+
+          inputText.setText('Code:')
+
+          break
+        }
+        case 'Code:0002': {
+          this.game.sound.playAudioSprite('sfx', 'victory')
+
+          const localStorageScene = this.scene.get(
+            constants.SCENES.LOCAL_STORAGE
+          )
+          const localStorageData = localStorageScene.data.get(
+            'localStorageData'
+          ) as LocalStorageData
+
+          const fishesDefault = localStorageData.getDefaultValue('fishes')
+          localStorageData.set('fishes', fishesDefault)
+
+          const selectFishDefault =
+            localStorageData.getDefaultValue('selectFish')
+          localStorageData.set('selectFish', selectFishDefault)
 
           inputText.setText('Code:')
 
