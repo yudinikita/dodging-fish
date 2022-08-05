@@ -32,6 +32,9 @@ const gameConfig: Phaser.Types.Core.GameConfig = {
     roundPixels: true,
   },
   autoFocus: true,
+  dom: {
+    createContainer: true,
+  },
   scene: SceneList,
   plugins,
 }
