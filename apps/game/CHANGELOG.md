@@ -1,5 +1,11 @@
 # dodging-fish-game
 
+## 0.0.16
+
+### Patch Changes
+
+- dae9b79: Feat/sounds
+
 ## 0.0.15
 
 ### Patch Changes
