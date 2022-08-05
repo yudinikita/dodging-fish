@@ -1,8 +1,12 @@
 import i18next from 'i18next'
 import Anchor from 'phaser3-rex-plugins/plugins/behaviors/anchor/Anchor'
 import { Buttons, Label } from 'phaser3-rex-plugins/templates/ui/ui-components'
-import { DropDownList } from 'phaser3-rex-plugins/templates/ui/ui-components.js'
-import RoundRectangleCanvas from 'phaser3-rex-plugins/plugins/roundrectanglecanvas'
+import { DropDownList } from 'phaser3-rex-plugins/templates/ui/ui-components'
+import RoundRectangle from 'phaser3-rex-plugins/plugins/roundrectangle.js'
+import { NumberBar } from 'phaser3-rex-plugins/templates/ui/ui-components'
+import InputText from 'phaser3-rex-plugins/plugins/hiddeninputtext'
+import BBCodeText from 'phaser3-rex-plugins/plugins/bbcodetext'
+import LocalStorageData from 'phaser3-rex-plugins/plugins/localstorage-data'
 import constants from '@/constants'
 import Button from '@/components/Button'
 import Toast from '@/components/Toast'
@@ -18,6 +22,8 @@ export default class SettingsScene extends Phaser.Scene {
     this.addVersion()
     this.addButtons()
     this.addChangeLanguage()
+    this.addVolume()
+    this.addCheats()
   }
 
   private addBackground() {
@@ -104,6 +110,8 @@ export default class SettingsScene extends Phaser.Scene {
     buttons.on(
       'button.click',
       (button: Button, index: number) => {
+        this.game.sound.playAudioSprite('sfx', 'button')
+
         switch (index) {
           case 0:
             this.scene.stop()
@@ -162,6 +170,8 @@ export default class SettingsScene extends Phaser.Scene {
           return selectButton.setName(language.value)
         },
         onButtonClick: (button) => {
+          this.game.sound.playAudioSprite('sfx', 'button')
+
           new Toast(this).showMessage(
             i18next.t('Restart the game to apply the changes')
           )
@@ -170,13 +180,13 @@ export default class SettingsScene extends Phaser.Scene {
         onButtonOver: (button) => {
           const bg = (button as Label).getElement(
             'background'
-          ) as RoundRectangleCanvas
+          ) as RoundRectangle
           bg.setFillStyle(0x00_4f_79)
         },
         onButtonOut: (button) => {
           const bg = (button as Label).getElement(
             'background'
-          ) as RoundRectangleCanvas
+          ) as RoundRectangle
           bg.setFillStyle(0x2b_af_f6)
         },
 
@@ -206,10 +216,167 @@ export default class SettingsScene extends Phaser.Scene {
 
     this.add.existing(dropdownList)
   }
+
+  private addVolume() {
+    const slider = new NumberBar(this, {
+      anchor: {
+        centerX: 'center',
+        centerY: 'top+700',
+      },
+
+      width: this.cameras.main.width * 0.8,
+
+      background: createBackground(this),
+
+      icon: this.add.image(0, 0, 'ui', 'volume-max'),
+
+      slider: {
+        track: createBackground(this, 0x00_4f_79),
+        indicator: createBackground(this, 0xff_ff_ff),
+        input: 'click',
+      },
+
+      text: this.add.text(0, 0, '', {
+        fontSize: '48px',
+        fontFamily: constants.FONT.FAMILY,
+        color: '#ffffff',
+      }),
+
+      space: {
+        left: 50,
+        right: 75,
+        top: 50,
+        bottom: 50,
+
+        icon: 50,
+        slider: 50,
+      },
+
+      valuechangeCallback: (value, oldValue, numberBar) => {
+        const percentage = Math.round(Phaser.Math.Linear(0, 100, value))
+
+        numberBar.text = percentage.toString()
+
+        const icon = numberBar.getElement('icon') as Phaser.GameObjects.Image
+        if (percentage < 1) {
+          icon.setFrame('volume-off')
+        } else if (percentage < 25) {
+          icon.setFrame('volume')
+        } else if (percentage < 75) {
+          icon.setFrame('volume-min')
+        } else if (percentage < 100) {
+          icon.setFrame('volume-max')
+        }
+
+        this.game.sound.volume = value
+      },
+    })
+      .layout()
+      .setValue(this.game.sound.volume)
+    this.add.existing(slider)
+  }
+
+  private addCheats() {
+    const label = new Label(this, {
+      anchor: {
+        centerX: 'center',
+        centerY: 'top+950',
+      },
+
+      width: this.cameras.main.width * 0.8,
+
+      background: createBackground(this),
+
+      icon: this.add.image(0, 0, 'ui', 'cool'),
+
+      text: createTextObject(this, 'Code:'),
+
+      space: {
+        left: 50,
+        right: 75,
+        top: 50,
+        bottom: 50,
+
+        icon: 50,
+      },
+    }).layout()
+    this.add.existing(label)
+
+    const text = label.getElement('text') as Phaser.GameObjects.Text
+
+    const inputText = new InputText(text, {
+      x: -500,
+      y: -500,
+      width: this.cameras.main.width * 0.8,
+      height: 180,
+      type: 'text',
+      fontFamily: constants.FONT.FAMILY,
+      fontSize: '48px',
+      color: '#ffffff',
+      border: 0,
+      backgroundColor: 'transparent',
+      borderColor: 'transparent',
+      outline: 'none',
+    }).on('textchange', (inputText: InputText) => {
+      switch (inputText.text) {
+        case 'Code:1111': {
+          this.game.sound.playAudioSprite('sfx', 'victory')
+
+          const localStorageScene = this.scene.get(
+            constants.SCENES.LOCAL_STORAGE
+          )
+          const localStorageData = localStorageScene.data.get(
+            'localStorageData'
+          ) as LocalStorageData
+
+          localStorageData.inc('roe', 500)
+
+          new Toast(this).showMessage(i18next.t('Added') + ' ' + 500)
+
+          inputText.setText('Code:')
+
+          break
+        }
+        case 'Code:1110': {
+          this.game.sound.playAudioSprite('sfx', 'victory')
+
+          const localStorageScene = this.scene.get(
+            constants.SCENES.LOCAL_STORAGE
+          )
+          const localStorageData = localStorageScene.data.get(
+            'localStorageData'
+          ) as LocalStorageData
+
+          localStorageData.set('roe', 0)
+
+          inputText.setText('Code:')
+
+          break
+        }
+        case 'Code:1112': {
+          this.game.sound.playAudioSprite('sfx', 'victory')
+
+          const localStorageScene = this.scene.get(
+            constants.SCENES.LOCAL_STORAGE
+          )
+          const localStorageData = localStorageScene.data.get(
+            'localStorageData'
+          ) as LocalStorageData
+
+          localStorageData.set('roe', 50_000)
+
+          inputText.setText('Code:')
+
+          break
+        }
+      }
+    })
+    this.add.existing(inputText)
+  }
 }
 
-const createBackground = (scene: Phaser.Scene) => {
-  const background = new RoundRectangleCanvas(
+const createBackground = (scene: Phaser.Scene, color = 0x2b_af_f6) => {
+  const background = new RoundRectangle(
     scene,
     0,
     0,
@@ -218,7 +385,7 @@ const createBackground = (scene: Phaser.Scene) => {
     {
       radius: 40,
     },
-    0x2b_af_f6
+    color
   )
   scene.add.existing(background)
 

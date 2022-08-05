@@ -19,6 +19,7 @@ export default class MainMenuScene extends Phaser.Scene {
 
     this.addPlayPanel()
     this.startGameEvent()
+    this.addVolumeEvent()
 
     this.addResumeEvent()
     this.addChangeSkinEvent()
@@ -158,6 +159,8 @@ export default class MainMenuScene extends Phaser.Scene {
     buttons.on(
       'button.click',
       (button: Button, index: number) => {
+        this.game.sound.playAudioSprite('sfx', 'button')
+
         switch (index) {
           case 0:
             this.scene.launch(constants.SCENES.PLAYER_SKINS)
@@ -185,5 +188,23 @@ export default class MainMenuScene extends Phaser.Scene {
         this.playerSkin.setFrame(selectSkin)
       }
     )
+  }
+
+  private addVolumeEvent() {
+    const localStorageScene = this.scene.get(constants.SCENES.LOCAL_STORAGE)
+    const localStorageData = localStorageScene.data.get(
+      'localStorageData'
+    ) as LocalStorageData
+
+    this.game.sound.volume = localStorageData.get('soundVolume') || 1
+
+    this.game.sound.on('volume', (_: any, volume: number) => {
+      const localStorageScene = this.scene.get(constants.SCENES.LOCAL_STORAGE)
+      const localStorageData = localStorageScene.data.get(
+        'localStorageData'
+      ) as LocalStorageData
+
+      localStorageData.set('soundVolume', volume)
+    })
   }
 }

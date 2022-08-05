@@ -1,0 +1,47 @@
+{
+  "resources": [
+    "sfxSprite.ogg"
+  ],
+  "spritemap": {
+    "button": {
+      "start": 0,
+      "end": 0.2390249433106576,
+      "loop": false
+    },
+    "candy": {
+      "start": 2,
+      "end": 2.2088888888888887,
+      "loop": false
+    },
+    "dead": {
+      "start": 4,
+      "end": 5.230226757369614,
+      "loop": false
+    },
+    "error": {
+      "start": 7,
+      "end": 7.357006802721088,
+      "loop": false
+    },
+    "jump": {
+      "start": 9,
+      "end": 9.076507936507937,
+      "loop": false
+    },
+    "point": {
+      "start": 11,
+      "end": 11.341746031746032,
+      "loop": false
+    },
+    "select": {
+      "start": 13,
+      "end": 13.125124716553287,
+      "loop": false
+    },
+    "victory": {
+      "start": 15,
+      "end": 16.111655328798186,
+      "loop": false
+    }
+  }
+}

@@ -91,6 +91,8 @@ export default class ShopScene extends Phaser.Scene {
     buttons.on(
       'button.click',
       (button: Button, index: number) => {
+        this.game.sound.playAudioSprite('sfx', 'button')
+
         switch (index) {
           case 0:
             this.scene.stop()
@@ -152,15 +154,21 @@ export default class ShopScene extends Phaser.Scene {
         const roe = localStorageData.get('roe') as number
 
         if (playerFishes.length >= constants.FISH.COUNT) {
+          this.game.sound.playAudioSprite('sfx', 'error')
+
           new Toast(this).showMessage(i18next.t('You have all the fish'))
           return
         }
 
         if (roe < constants.FISH.GIFT_COST) {
+          this.game.sound.playAudioSprite('sfx', 'error')
+
           const lacks = constants.FISH.GIFT_COST - roe
           new Toast(this).showMessage(i18next.t('Missing') + ' ' + lacks)
           return
         }
+
+        this.game.sound.playAudioSprite('sfx', 'victory')
 
         const icon = this.gift.getElement('icon') as Phaser.GameObjects.Image
         new ShakePosition(icon, {
@@ -176,8 +184,11 @@ export default class ShopScene extends Phaser.Scene {
 
         dialog.on('button.click', (button: Button) => {
           if (button.frame.name === 'back') {
+            this.game.sound.playAudioSprite('sfx', 'button')
             dialog.closeModal()
           } else if (button.frame.name === 'like') {
+            this.game.sound.playAudioSprite('sfx', 'button')
+
             localStorageData.set('selectFish', newFish)
 
             dialog.closeModal()
