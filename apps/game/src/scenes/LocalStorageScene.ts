@@ -21,6 +21,7 @@ export default class LocalStorageScene extends Phaser.Scene {
         roe: 0,
         selectFish: 'fish_01a',
         fishes: ['fish_01a', 'fish_02a'],
+        soundVolume: 0.5,
       },
     })
 

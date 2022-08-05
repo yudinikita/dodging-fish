@@ -108,6 +108,8 @@ export default class GameFieldScene extends Phaser.Scene {
     this.input.on(
       'pointerdown',
       () => {
+        this.game.sound.playAudioSprite('sfx', 'jump')
+
         this.player.jump()
       },
       this
@@ -235,6 +237,8 @@ export default class GameFieldScene extends Phaser.Scene {
             [bodyA.label, bodyB.label].includes('wallLeft') ||
             [bodyA.label, bodyB.label].includes('wallRight')
           ) {
+            this.game.sound.playAudioSprite('sfx', 'point')
+
             this.nextStep()
           } else if (
             [bodyA.label, bodyB.label].includes('wallTop') ||
@@ -243,6 +247,8 @@ export default class GameFieldScene extends Phaser.Scene {
           ) {
             this.gameOver()
           } else if ([bodyA.label, bodyB.label].includes('roe')) {
+            this.game.sound.playAudioSprite('sfx', 'candy')
+
             this.player.data.values.roe += this.roe?.getValue || 0
             this.roe?.showTakenValue()
             this.roe?.remove()
@@ -337,6 +343,8 @@ export default class GameFieldScene extends Phaser.Scene {
   }
 
   private gameOver() {
+    this.game.sound.playAudioSprite('sfx', 'dead')
+
     this.roe?.remove()
     this.roe = null
 

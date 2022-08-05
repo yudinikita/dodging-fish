@@ -41,6 +41,8 @@ export default class PlayerSkinsScene extends Phaser.Scene {
       0,
       this.skins,
       (selectItem: Button) => {
+        this.game.sound.playAudioSprite('sfx', 'select')
+
         const localStorageScene = this.scene.get(constants.SCENES.LOCAL_STORAGE)
         const localStorageData = localStorageScene.data.get(
           'localStorageData'
@@ -56,11 +58,15 @@ export default class PlayerSkinsScene extends Phaser.Scene {
 
           dialog.on('button.click', (button: Button) => {
             if (button.frame.name === 'back') {
+              this.game.sound.playAudioSprite('sfx', 'button')
+
               dialog.closeModal()
             } else if (
               button.frame.name === 'like' &&
               localStorageData.get('roe') >= constants.FISH.BUY_COST
             ) {
+              this.game.sound.playAudioSprite('sfx', 'victory')
+
               localStorageData.set('selectFish', selectItem.frame.name)
               localStorageData.set('fishes', [...fishes, selectItem.frame.name])
 
@@ -69,11 +75,17 @@ export default class PlayerSkinsScene extends Phaser.Scene {
 
               localStorageData.inc('roe', constants.FISH.BUY_COST * -1)
 
+              this.countText.setText(
+                `${fishes.length + 1}/${constants.FISH.COUNT}`
+              )
+
               dialog.closeModal()
             } else if (
               button.frame.name === 'like' &&
               localStorageData.get('roe') < constants.FISH.BUY_COST
             ) {
+              this.game.sound.playAudioSprite('sfx', 'error')
+
               const lacks =
                 constants.FISH.BUY_COST - localStorageData.get('roe')
               new Toast(this).showMessage(i18next.t('Missing') + ' ' + lacks)
@@ -125,15 +137,15 @@ export default class PlayerSkinsScene extends Phaser.Scene {
       'localStorageData'
     ) as LocalStorageData
 
-    localStorageData.events.on(
-      'changedata-fishes',
-      (_: any, fishes: string[]) => {
-        if (this.countText) {
-          this.countText.setText(`${fishes.length}/${constants.FISH.COUNT}`)
-        }
-      },
-      this
-    )
+    // localStorageData.events.on(
+    //   'changedata-fishes',
+    //   (_: any, fishes: string[]) => {
+    //     if (this.countText && fishes.length > 0) {
+    //       this.countText.setText(`${fishes.length}/${constants.FISH.COUNT}`)
+    //     }
+    //   },
+    //   this
+    // )
 
     const currentSkins = localStorageData.get('fishes') as string[]
 
@@ -197,6 +209,8 @@ export default class PlayerSkinsScene extends Phaser.Scene {
     buttons.on(
       'button.click',
       (button: Button, index: number) => {
+        this.game.sound.playAudioSprite('sfx', 'button')
+
         switch (index) {
           case 0:
             this.scene.stop()

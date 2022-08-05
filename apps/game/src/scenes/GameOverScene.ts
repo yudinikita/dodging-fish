@@ -24,6 +24,7 @@ export default class GameOverScene extends Phaser.Scene {
   }
 
   create() {
+    this.addBackground()
     this.addBackgroundScore()
     this.addScore()
     this.startMainMenuEvent()
@@ -63,6 +64,20 @@ export default class GameOverScene extends Phaser.Scene {
       'localStorageData'
     ) as LocalStorageData
     localStorageData.inc('roe', this.roe)
+  }
+
+  private addBackground() {
+    this.add
+      .rectangle(
+        0,
+        0,
+        this.cameras.main.width,
+        this.cameras.main.height,
+        0xff_ff_ff,
+        0
+      )
+      .setOrigin(0, 0)
+      .setInteractive()
   }
 
   private addBackgroundScore() {
