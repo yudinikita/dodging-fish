@@ -23,6 +23,8 @@ The fish is in an enclosed space, with fixed spikes on the bottom and top, and t
 In addition, there are fish roe that need to be collected on the level, which adds additional complexity to the gameplay.
 The game has minimalistic graphics and an extremely challenging gameplay process, which will appeal to people who like challenge and difficulty.
 
+![About game](https://user-images.githubusercontent.com/36636599/184531818-f01eebe7-7a6a-4e46-ba9f-85a104603d14.png)
+
 <img align='right' src="https://user-images.githubusercontent.com/36636599/181757754-80294aac-1d87-4e75-97aa-a75daede5de1.gif" width="100">
 
 ## 🔨 Built with
