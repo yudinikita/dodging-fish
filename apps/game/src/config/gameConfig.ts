@@ -35,6 +35,7 @@ const gameConfig: Phaser.Types.Core.GameConfig = {
   dom: {
     createContainer: true,
   },
+  powerPreference: 'high-performance',
   scene: SceneList,
   plugins,
 }
